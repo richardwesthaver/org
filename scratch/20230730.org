@@ -1,0 +1,36 @@
+* VC infrastructure
+In heptapod we have a root group named =comp=, containg a variety of
+subgroups. Some of these groups should be public, while others are
+internal to comp members exclusively. Within each subgroup, we should
+have the root group members automatically granted privileged access to
+projects. This is relevant for the =startup= subgroup in particular,
+where each project is potentially maintained by multiple non-root
+contributors.
+
+We also need to consider how we will manage subrepos across the
+organization. It is about time we start integrating HG bundles and
+potentially mirrors. For our core VC pipeline we should have no
+reliance on Git, but this may be difficult. It depends on the behavior
+of HG bundles.
+
+Bookmarks/tags should be used for milestones in the root group and are
+infrequent. They are more frequent in projects with a regular release
+life-cycle.
+* Approaching Webapps
+I started poking around in the webapp space again so that I can launch
+a landing page for NAS-T quickly. The Rust situation has improved
+somewhat on the frontend side, and the axum backend stack is nice.
+
+This might seem like a lot of Rust and not a lot of Lisp, which it is,
+but there's still room for Lisp wherever we need it. It mostly plays a
+role in the backend, servicing the database and responding to requests
+from the Rust edges. All of the important tests for the web APIs are
+also written in Lisp. We will almost certainly use Lisp for all static
+processing and HTML generation at compile-time.
+
+This I believe, is the appropriate way to integrate Lisp into a
+cutting-edge web-app. You get the good parts of Lisp where you need
+them (interactive debugging, dynamic language, REPL) and avoid the bad
+parts (OOB optimization, RPS performance) in areas where the customer
+would be impacted. In this domain, Lisp takes the form of a glue
+rather than the bricks and mortar it sometimes appears to us as.

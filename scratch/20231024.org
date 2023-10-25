@@ -1,0 +1,59 @@
+* virt
+** QEMU
+** KVM
+** Hyper-V
+** Firecracker
+** Docker
+** Vagrant
+** LXC
+** LXD
+** containerd
+** systemd-nspawn
+** VirtualBox
+
+* Concatenative
+** Factor                                                           :factor:
+- [2023-07-04 Tue]
+  Factor is a cool concatenative lang but unfortunately the C interface
+  (vm/master.h) no longer exists on the master branch.
+** Joy                                                                 :joy:
+
+*** https://hypercubed.github.io/joy/html/j02maf.html
+
+*** [[https://builds.openlogicproject.org/content/incompleteness/arithmetization-syntax/arithmetization-syntax.pdf][arithmetization of syntax]]
+* Lisp                                                                 :lisp:
+These notes pertain to Lisp. More specifically, ANSI Common Lisp in
+most places.
+
+- https://github.com/lispnik/iup/ - doesn't support MacOS yet, looks
+  cool though
+  - what we really need is wasm compiler.. TBD
+* Rust
+** Serde
+- [2023-07-05 Wed] \\
+  important part of the Rust ecosystem, another dtolnay
+  contribution. If you want to program a /data/ format in the Rust
+  ecosystem, this is how you do it.
+
+  The way it works is that you define some special structs, a
+  Serializer and a Deserializer which implement the Serialize and
+  Deserialize traits provided by serde, respectively.
+
+  You can use these structs to provide your public API. The
+  conventional choice is public top-level functions like from-str
+  and to-string. That's it, your serialization library can now read and
+  write your data format as Rust data types.
+
+  [[https://serde.rs/enum-representations.html][enum-representations]]
+  - the default behavior is an externally tagged representation (verbose)
+
+  The docs use strings as core IO when implementing a custom format,
+  but the convention is to implement for T where T is bound by std::io
+  Read or Write trait. Then you can provide a more robust public API
+  (from_bytes, from_writer, etc).
+* C
+* CPP
+* Nu
+[[https://www.nushell.sh/][~]]
+[[https://www.nushell.sh/cookbook/][cookbook]]
+[[https://github.com/nushell/nu_scripts][nu_scripts]]

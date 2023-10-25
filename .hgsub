@@ -1,5 +1,2 @@
 blog=https://lab.rwest.io/comp/blog
 docs=https://lab.rwest.io/comp/docs
-notes=ssh://git@lab.rwest.io/comp/notes
-pitch=ssh://git@lab.rwest.io/comp/pitch
-roadmap=ssh://git@lab.rwest.io/comp/roadmap
