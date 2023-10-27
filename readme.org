@@ -1,4 +1,6 @@
 #+TITLE: comp/org
+This is the source repository for all documentation pertaining to /The
+Compiler Company/.
 
 * blog
 
