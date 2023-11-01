@@ -1,0 +1,18 @@
+* AWS usage
+We're leveraging AWS for some of our public web servers for now. It's
+really not realistic to expect that my home desktop and spotty Comcast
+internet can serve any production workflow. What it /is/ capable of is
+a private VPN, which can communicate with AWS and other cloud VPN
+depots via WireGuard.
+
+I currently use Google Domains for nas-t.net, otom8.dev, and
+rwest.io - but that business is now owned by squarespace, so I would
+rather move it to Route53.
+
+We have archlinux ec2 image builds [[https://wiki.archlinux.org/title/Arch_Linux_AMIs_for_Amazon_Web_Services][here]] and [[https://gitlab.com/anemos-io/archlinux-ec2][here]] - only half work and not
+maintained, but it's a start. I'm not even sure if I should stick with
+arch or cave and use Ubuntu or AWS Linux. We can serve the static
+services with little cost, the only big spender will be the heptapod
+instance which requires a larger instance and some workers.
+
+We'll try to keep the cost at or around $30/month.
