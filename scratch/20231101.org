@@ -3,7 +3,7 @@ We're leveraging AWS for some of our public web servers for now. It's
 really not realistic to expect that my home desktop and spotty Comcast
 internet can serve any production workflow. What it /is/ capable of is
 a private VPN, which can communicate with AWS and other cloud VPN
-depots via WireGuard.
+depots via WireGuard ([[https://dev.to/gabrieltetzner/setting-up-a-vpn-with-wireguard-server-on-aws-ec2-4a49][article]]).
 
 I currently use Google Domains for nas-t.net, otom8.dev, and
 rwest.io - but that business is now owned by squarespace, so I would

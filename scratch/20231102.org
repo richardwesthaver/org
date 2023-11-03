@@ -1,9 +1,5 @@
-#+TITLE: ideas
-#+TODO: TODO WIP RFC | DONE
-This is a running list of ideas. Most of these are tools, libraries,
-projects, etc but anything is fair game.
-
-* TODO shed
+* IDEAS
+** TODO shed
 :PROPERTIES:
 :ID:       fc9a94e1-91c5-4915-90b8-73218fa3b8bc
 :END:
@@ -16,7 +12,7 @@ rlib
 > ulib
 > ulib
 
-** TODO sh* tools
+*** TODO sh* tools
 :PROPERTIES:
 :ID:       c0613a13-7ccb-4af9-b47e-e14a41c782c2
 :END:
@@ -24,40 +20,40 @@ rlib
 - State "TODO"       from "TODO"       [2023-04-07 Fri 23:22]
 :END:
 shc,shx,etc
-* WIP packy
+** WIP packy
 :LOGBOOK:
 - State "TODO"       from              [2023-04-07 Fri 23:33]
 :END:
-** WIP rust
-** WIP common-lisp
-** WIP emacs-lisp
-** python
-** julia
-** C
-** C++
-* TODO tenex
+*** WIP rust
+*** WIP common-lisp
+*** WIP emacs-lisp
+*** python
+*** julia
+*** C
+*** C++
+** TODO tenex
 :LOGBOOK:
 - State "TODO"       from              [2023-04-07 Fri 23:52]
 :END:
-* TODO mpk
+** TODO mpk
 :LOGBOOK:
 - State "TODO"       from              [2023-04-07 Fri 23:52]
 :END:
-* TODO cfg
+** TODO cfg
 :LOGBOOK:
 - State "TODO"       from              [2023-04-07 Fri 23:34]
 :END:
-* TODO obj
+** TODO obj
 :LOGBOOK:
 - State "TODO"       from              [2023-04-07 Fri 23:51]
 :END:
 split out from rlib to separate package
 - a purely OOP class library
-* TODO lab
+** TODO lab
 :LOGBOOK:
 - State "TODO"       from              [2023-04-07 Fri 23:34]
 :END:
-* TODO source categories
+** TODO source categories
 - need a way of extracting metadata from a repo
 - need ability to search and query libs/packages
 - separate modules based on where they belong in our stack?
@@ -66,12 +62,12 @@ split out from rlib to separate package
   - script?
   - dist
     - software distros
-* TODO generic query language
+** TODO generic query language
 from obj protocol?
 sql compatibility?
 
 /check out kdb/
-* TODO bbdb
+** TODO bbdb
 :LOGBOOK:
 - Note taken on [2023-10-24 Tue 22:16] \\
   graph database, build on rocksdb
@@ -80,7 +76,7 @@ insidious Big Brother database.
 - an application built with obj
 - sql
 
-* TODO NAS-TV                                                         :nas:t:
+** TODO NAS-TV                                                        :nas:t:
 - media streaming
 - gstreamer backend
 - audio/video

@@ -2,12 +2,12 @@
 This is the source repository for all documentation pertaining to /The
 Compiler Company/.
 
-* blog
+* [[file:blog/][blog]]
 
-* docs
+* [[file:docs/][docs]]
 
-* notes
+* [[file:scratch/][scratch]]
 
-* pitch
+* [[file:pitch.org][pitch]]
 
-* roadmap
+* [[file:roadmap.org][roadmap]]
