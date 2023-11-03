@@ -2,6 +2,8 @@
 This is the source repository for all documentation pertaining to /The
 Compiler Company/.
 
+|[[https://lab.rwest.io/comp.atom?feed_token=pHu9qwLkjy4CWJHx9rrJ][atom]]|
+
 * [[file:blog/][blog]]
 
 * [[file:docs/][docs]]
