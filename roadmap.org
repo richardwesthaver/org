@@ -2,4 +2,15 @@
 #+AUTHOR: Richard Westhaver
 #+EMAIL: ellis@rwest.io
 
-* ART
+* WIP 2023
+SCHEDULED: <2023-01-01 Mon>--[2023-12-31 Tue]
+- State "WIP"     from              [2023-11-05 Sun 21:47]
+** TODO NAS-T charter
+- State "TODO"       from              [2023-11-05 Sun 21:51]
+** TODO compiler.company web services
+- State "TODO"       from              [2023-11-05 Sun 21:52]
+** TODO hello-world blog post
+- State "TODO"       from              [2023-11-05 Sun 21:53]
+* TODO 2024
+SCHEDULED: <2024-01-01 Mon>--[2024-12-31 Tue]
+- State "TODO"       from              [2023-11-05 Sun 21:47]
