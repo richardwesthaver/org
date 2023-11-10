@@ -1,6 +1,6 @@
 #+TITLE: comp/org
-This is the source repository for all documentation pertaining to /The
-Compiler Company/.
+#+AUTHOR: Richard Westhaver <ellis@rwest.io>
+Welcome to /The Compiler Company/.
 
 |[[https://lab.rwest.io/comp.atom?feed_token=pHu9qwLkjy4CWJHx9rrJ][atom]]|
 
