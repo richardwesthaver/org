@@ -2,7 +2,7 @@
 #+AUTHOR: Richard Westhaver <ellis@rwest.io>
 Welcome to /The Compiler Company/.
 
-|[[https://lab.rwest.io/comp.atom?feed_token=pHu9qwLkjy4CWJHx9rrJ][atom]]|
+|[[https://lab.rwest.io/comp.atom][vc.feed]]|
 
 * [[file:blog/][blog]]
 
