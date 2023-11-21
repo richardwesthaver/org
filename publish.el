@@ -1,5 +1,7 @@
 ;;; publish.el --- the.compiler.company publishing script  -*- lexical-binding: t; -*-
 
+;; emacsclient -e '(load-file "publish.el")' '(publish)'
+
 ;;; Code:
 (require 'ox-publish)
 (require 'org-id)
