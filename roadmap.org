@@ -1,6 +1,10 @@
 #+TITLE: roadmap
 #+AUTHOR: Richard Westhaver
 #+EMAIL: ellis@rwest.io
+#+OPTIONS: ^:nil toc:nil num:nil
+#+HTML_HEAD: <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://packy.rwest.io/style/css/new.min.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://packy.rwest.io/style/css/terminal.css"/>
 
 * WIP 2023
 SCHEDULED: <2023-01-01 Mon>--[2023-12-31 Tue]

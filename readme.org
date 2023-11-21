@@ -1,15 +1,17 @@
-#+TITLE: comp/org
+#+TITLE: The Compiler Company
 #+AUTHOR: Richard Westhaver <ellis@rwest.io>
-Welcome to /The Compiler Company/.
+#+OPTIONS: ^:nil toc:nil num:nil html-postamble:nil
+#+HTML_HEAD: <link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://packy.rwest.io/style/css/new.min.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://packy.rwest.io/style/css/terminal.css"/>
+#+EXPORT_FILE_NAME: index
+Welcome stranger.
 
 |[[https://lab.rwest.io/comp.atom][vc.feed]]|
 
-* [[file:blog/][blog]]
+- [[file:blog][blog]] 
+  - [2023-11-19 Sun] [[https://compiler.company/blog/hello-world][hello-world]]
 
-* [[file:docs/][docs]]
-
-* [[file:scratch/][scratch]]
-
-* [[file:pitch.org][pitch]]
-
-* [[file:roadmap.org][roadmap]]
+- [[file:docs][docs]] 
+- [[file:roadmap.org][roadmap]]
+- [[file:pitch.org][pitch]]
