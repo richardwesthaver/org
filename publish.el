@@ -24,7 +24,8 @@
       org-html-validation-link nil
       org-src-fontify-natively t
       make-backup-files nil
-      debug-on-error t)
+      debug-on-error t
+      org-id-link-to-org-use-id t)
 
 (setq org-publish-project-alist
       `(("compiler.company" :components ("index" "blog" "docs"))
