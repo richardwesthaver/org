@@ -34,6 +34,9 @@
          :base-extension "org"
          :recursive nil
          :htmlized-source t
+         :footnote-section-p t
+         :html-footnotes-section t
+         :html-doctype "<!doctype html>"
 	 :html-preamble ,html-nav
          :publishing-directory ,publish-dir
          :publishing-function org-html-publish-to-html
@@ -41,6 +44,9 @@
         ("blog"
          :base-directory ,(expand-file-name "blog" project-dir)
          :base-extension "org"
+         :footnote-section-p t
+         :html-footnotes-section t
+         :html-doctype "<!doctype html>"
 	 :publishing-directory ,(expand-file-name "blog" publish-dir)
 	 :publishing-function org-html-publish-to-html
 	 :htmlized-source t
@@ -50,6 +56,9 @@
          :base-directory ,(expand-file-name "docs" project-dir)
          :base-extension "org"
          :recursive t
+         :footnote-section-p t
+         :html-footnotes-section t
+         :html-doctype "<!doctype html>"
          :publishing-directory ,(expand-file-name "docs" publish-dir)
 	 :publishing-function org-html-publish-to-html
 	 :htmlized-source t
