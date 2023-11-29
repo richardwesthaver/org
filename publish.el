@@ -11,7 +11,7 @@
 (defvar publish-dir "/mnt/w/compiler.company")
 (defvar html-theme nil)
 (defvar url "https://compiler.company")
-(defvar html-nav "<div> <a href = \"https://compiler.company\">~/</a> ( <a href = \"https://compiler.company/blog\">blog</a> <a href = \"https://compiler.company/docs\">docs</a> <a href = \"https://vc.compiler.company/comp\">code</a> ) </div>")
+(defvar html-nav "<div class=\"nav\"> <a href = \"https://compiler.company\">~/</a> ( <a href = \"https://compiler.company/blog\">blog</a> <a href = \"https://compiler.company/docs\">docs</a> <a href = \"https://vc.compiler.company/comp\">code</a> ) </div>")
 
 (defvar html-foot "<footer>updated %C</footer>")
 
@@ -35,7 +35,6 @@
          :recursive nil
          :htmlized-source t
          :footnote-section-p t
-         :html-footnotes-section t
          :html-doctype "<!doctype html>"
 	 :html-preamble ,html-nav
          :publishing-directory ,publish-dir
@@ -45,7 +44,6 @@
          :base-directory ,(expand-file-name "blog" project-dir)
          :base-extension "org"
          :footnote-section-p t
-         :html-footnotes-section t
          :html-doctype "<!doctype html>"
 	 :publishing-directory ,(expand-file-name "blog" publish-dir)
 	 :publishing-function org-html-publish-to-html
@@ -57,7 +55,6 @@
          :base-extension "org"
          :recursive t
          :footnote-section-p t
-         :html-footnotes-section t
          :html-doctype "<!doctype html>"
          :publishing-directory ,(expand-file-name "docs" publish-dir)
 	 :publishing-function org-html-publish-to-html
