@@ -1,12 +1,10 @@
 {{{header(The Compiler Company,Richard Westhaver,ellis@rwest.io)}}}
 #+OPTIONS: ^:nil toc:nil num:nil html-postamble:nil
 #+EXPORT_FILE_NAME: index
-Welcome stranger.
+Welcome to the home of The Compiler Company.
 
-|[[https://lab.rwest.io/comp.atom][vc.feed]]|
-
-- [[file:blog][blog]] 
-  - [2023-11-19 Sun] [[https://compiler.company/blog/hello-world][hello-world]]
-- [[file:docs][docs]] 
-- [[file:roadmap.org][roadmap]]
-- [[file:pitch.org][pitch]]
+* [[file:blog][blog]] 
+** [2023-11-19 Sun] [[https://compiler.company/blog/hello-world][hello-world]]
+* [[file:docs][docs]] 
+* [[file:roadmap.org][roadmap]]
+* [[file:pitch.org][pitch]]
