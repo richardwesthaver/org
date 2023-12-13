@@ -1,0 +1,5 @@
+
+* doc best practices
+https://rust-lang.github.io/api-guidelines/documentation.html
+
+also: https://lisp-lang.org/style-guide/

@@ -1,0 +1,89 @@
+* On Computers
+If you've met me in the past decade, you probably know that I am
+extremely passionate about computers. Let me first explain why.
+
+On the most basic level computers are little (or big) machines that
+can be programmed to do things, or /compute/ if we're being
+technical.[fn:1]
+
+They host and provide access to the Internet, which is a pretty big
+thing, but they do little things too like unlock your car door and
+tell your microwave to beep at you. They solve problems. Big or small.
+
+They're also /everywhere/ - which can be scary to think about, but
+ultimately helps propel us into the future.
+
+There's something pretty cool about that - when you look at the
+essence of computation. There are endless quantities of these machines
+which follow the same basic rules and can be used to solve /real/
+problems.
+
+** The Programmer
+Now, let us consider the /programmer/. They have power. /real/
+power. They understand the language of computers, can whisper to them
+in various dialects. It can be intimidating to witness until you
+realize how often the programmer says the wrong thing - a bug.
+
+In reality, the programmer has a symbiotic relationship with
+computers. Good programmers understand this relationship well.
+
+#+begin_annecdote
+One day after I got my first job at a software company, I remember
+being on an all-hands meeting due to a client service outage. We had
+some management, our lead devs, product team, and one curious looking
+man who happened to be our lead IT consultant who had just joined. He
+was sitting up on a hotel bed, shirtless, vaping an e-cig, typing
+away in what I can only imagine was a shell prompt.
+
+After several minutes he took a swig from a bottle of Coke and said
+"Node 6 is sick." then a few seconds later our services were
+restored. For the next hour on the call he explained what happened and
+why, but that particular phrase always stuck with me. He didn't say
+Node 6 was down, or had an expired cert - his diagnosis was that /it/
+was /sick/. 
+#+end_annecdote
+
+The more you work closely with computers, the more you start to think
+of them this way. You don't start screaming when the computer does the
+wrong thing, you figure out what's wrong and learn from it. With
+experience, you start to understand the different behaviors of the
+machines you work with. I like to call this /Machine Empathy/.
+
+** Programs
+I already mentioned bugs - I write plenty of those, but usually I try
+to write /programs/. Programs to me are like poetry. I like to think
+they are for the computer too.
+
+Just like computers, /computer programs/ come in different shapes and
+sizes but in basic terms they are sets of instructions used to control
+a computer.
+
+You can write programs to do anything - when I first started, my
+programs made music. The program was a means to an end. Over time, I
+started to see the program as something much more. I saw it as the
+music itself.
+
+[fn:1] ... perform computations
+
+
+* On Infra
+Something that is missing from many organizations big or large, is an
+effective way to store and access information, even about their own
+org.
+
+It can be difficult problem to solve - usually there's the official
+one, say Microsoft Sharepoint and then the list of unofficial sources
+which becomes tribal corporate hacker knowledge. Maybe the unofficial
+ones are more current, or are annotated nicely, but their very
+existence breaks the system. There's no longer a single source of
+truth.
+
+My priority in this department is writing services which process and
+store information from a variety of sources in a distributed knowledge
+graph. The graph can later be queried to access information on-demand.
+
+My idea of infrastructure is in fact to build my own Cloud. Needless
+to say I don't have an O365 subscription, and wherever possible I'll
+be relying on hardware I have physical access to. I'm not opposed to
+cloud services at large but based on principle I like to think we
+shouldn't be built on them.
