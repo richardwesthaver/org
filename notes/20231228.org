@@ -1,0 +1,40 @@
+* useful internals
+#+begin_src lisp
+  sb-sys:*runtime-dlhandle*
+  sb-fasl:+fasl-file-version+
+  sb-fasl:+backend-fasl-file-implementation+
+  sb-debug:print-backtrace
+  sb-debug:map-backtrace
+  sb-pretty:pprint-dispatch-table
+  sb-lockless:
+  sb-ext:simd-pack
+  sb-walker:define-walker-template
+  sb-walker:macroexpand-all
+  sb-walker:walk-form
+  sb-kernel:empty-type
+  sb-kernel:*eval-calls*
+  sb-kernel:*gc-pin-code-pages*
+  sb-kernel:*restart-clusters*
+  sb-kernel:*save-lisp-clobbered-globals*
+  sb-kernel:*top-level-form-p*
+  sb-kernel:*universal-fun-type*
+  sb-kernel:*universal-type*
+  sb-kernel:*wild-type*
+  sb-kernel:+simd-pack-element-types+
+  (sb-vm:memory-usage)
+  (sb-vm:boxed-context-register)
+  (sb-vm:c-find-heap->arena)
+  (sb-vm:copy-number-to-heap)
+  (sb-vm:dump-arena-objects)
+  (sb-vm:fixnumize)
+  (sb-vm:rewind-arena)
+  (sb-vm:show-heap->arena)
+  (sb-vm:with/without-arena)
+  (sb-cltl2:{augment-environment,compiler-let,define-declaration,parse-macro})
+  (sb-cltl2:{declaration-information, variable-information, function-information})
+  sb-di:
+  sb-assem:
+  sb-md5:
+  sb-regalloc:
+  sb-disassem:
+#+end_src
