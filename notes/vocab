@@ -1,0 +1,19 @@
+;;; docs/vocab --- project glossary -*- mode:outline;outline-regexp:"[-]+" -*-
+- wrt : With Respect To
+- nyi : Not Yet Implemented
+- rt : Regression Testing
+- vm : Virtual Machine
+- asm : Assembly
+- comp : Compiler
+- eval : Evaluate
+- alloc : Allocate
+- ret : Return
+- tco : Tail-call Optimization
+- reg : Register
+- sbcl : Steel Bank Common Lisp
+- rs : Rust (the language)
+- el : Emacs Lisp
+- cl : Common Lisp
+- pcl : Practical Common Lisp
+- taomop : The Art of the Meta Object Protocol
+- lol : Let Over Lambda
