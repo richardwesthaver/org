@@ -1,3 +1,0 @@
-* https://cal-coop.gitlab.io/utena/utena-specification/main.pdf
-from the author of cl-decentralise2. draft specification of a
-/Maximalist/ Computing System.

@@ -1,6 +1,0 @@
-goals:
-make problems smaller.
-
-sections:
-why lisp?
-- doesn't need mentioning more and more

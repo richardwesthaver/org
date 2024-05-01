@@ -6,5 +6,5 @@ Welcome to the home of The Compiler Company.
 * [[file:blog][blog]] 
 ** [2023-11-19 Sun] [[https://compiler.company/blog/hello-world][hello-world]]
 * [[file:docs][docs]] 
-* [[file:roadmap.org][roadmap]]
-* [[file:pitch.org][pitch]]
+* [[file:roadmap][roadmap]]
+* [[file:pitch][pitch]]

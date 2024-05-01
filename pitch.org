@@ -1,4 +1,0 @@
-{{{header(pitch,
-Richard Westhaver,
-ellis@rwest.io,
-The Big Picture)}}}

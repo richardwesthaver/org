@@ -1,5 +1,0 @@
-* global refs
-need a way of indexing, referring to, and annotating objects such as
-URLs, docs, articles, source files, etc.
-
-What is the best way to get this done?
