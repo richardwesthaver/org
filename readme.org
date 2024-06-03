@@ -1,10 +1,21 @@
-{{{header(The Compiler Company,Richard Westhaver,ellis@rwest.io)}}}
+#+title: The Compiler Company
+#+author: Richard Westhaver
+#+email: richard.westhaver@gmail.com
 #+OPTIONS: ^:nil toc:nil num:nil html-postamble:nil
 #+EXPORT_FILE_NAME: index
-Welcome to the home of The Compiler Company.
-
 * [[file:blog][blog]] 
-** [2023-11-19 Sun] [[https://compiler.company/blog/hello-world][hello-world]]
+:PROPERTIES:
+:ID:       bdaf5213-bbff-4a67-9a36-bd0af4bff4c3
+:END:
 * [[file:docs][docs]] 
+:PROPERTIES:
+:ID:       64f2e1c6-d1af-44b0-85e4-dc1f85201f82
+:END:
 * [[file:roadmap][roadmap]]
+:PROPERTIES:
+:ID:       6a08e4d7-982a-4dbb-a007-b58e96cbe2e9
+:END:
 * [[file:pitch][pitch]]
+:PROPERTIES:
+:ID:       8d7312f9-12d6-479d-8262-16c93e7806cd
+:END:
