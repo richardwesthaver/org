@@ -1,6 +1,7 @@
 #+title: The Compiler Company
 #+author: Richard Westhaver
 #+email: richard.westhaver@gmail.com
+#+setupfile: clean.theme
 #+export_file_name: index
 #+OPTIONS: ^:nil toc:nil num:nil html-postamble:nil
 * [[file:blog][blog]] 
@@ -11,11 +12,12 @@
 :PROPERTIES:
 :ID:       64f2e1c6-d1af-44b0-85e4-dc1f85201f82
 :END:
-* [[file:plan][plan]]
+* [[file:plan/roadmap.org][plan]]
 :PROPERTIES:
 :ID:       6a08e4d7-982a-4dbb-a007-b58e96cbe2e9
 :END:
-* [[file:pitch][pitch]]
+
+* [[file:notes][notes]]
 :PROPERTIES:
-:ID:       8d7312f9-12d6-479d-8262-16c93e7806cd
+:ID:       fbf365dd-0a36-4b0e-bfff-c8655eb80a51
 :END:
