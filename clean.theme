@@ -1,5 +1,6 @@
 ; -*- mode: org -*-
 #+STARTUP: entitiespretty
+#+language: ulang
 #+DATE: {{{modification-time("%F %r", t)}}}
 #+OPTIONS: org-html-head-include-default-style:t ^:nil _:nil email:t \n:nil Tex:t LaTeX:t broken-links:mark
 #+BIND: org-html-self-link-headlines t
@@ -14,6 +15,8 @@
 #+COMMENT: #+ODT_STYLES_FILE: ~/org/ox/odt-theme.xml
 #+LATEX_HEADER: \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 #+LATEX_HEADER: \hypersetup{colorlinks, citecolor=red,filecolor=magenta,linkcolor=magenta,urlcolor=magenta}
+
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/css/htmlize.css" />
 
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/font/commit-mono.css" />
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/font/3270.css" />
@@ -49,22 +52,23 @@
 #+HTML_HEAD: }
 #+HTML_HEAD: body {
 #+HTML_HEAD:     font-family:  "CommitMono", monospace;
-# #+HTML_HEAD:     font-size:  14px;
-#+HTML_HEAD:     -webkit-font-smoothing: antialiased;
-#+HTML_HEAD:     -moz-osx-font-smoothing: grayscale;
-#+HTML_HEAD:     font-feature-settings: "ss01", "ss03", "ss04", "ss05";
+#+HTML_HEAD:     font-size:  14px;
+# #+HTML_HEAD:     -webkit-font-smoothing: antialiased;
+# #+HTML_HEAD:     -moz-osx-font-smoothing: grayscale;
+# #+HTML_HEAD:     font-feature-settings: "ss01", "ss03", "ss04", "ss05";
 #+HTML_HEAD:     color:  #EFFAF9;
 #+HTML_HEAD:     background-color: #3F3F37;
 #+HTML_HEAD: }
+
 #+HTML_HEAD: div.status {
-#+HTML_HEAD:     position: sticky;
-#+HTML_HEAD:     left: 0em;
+# #+HTML_HEAD:     position: fixed;
+# #+HTML_HEAD:     margin: 0.2em;
 #+HTML_HEAD:     text-align: center;
 #+HTML_HEAD: }
+
 #+HTML_HEAD: h1, h2, h3, h4, h5, h6 {
 #+HTML_HEAD:     position:  relative;
-#+HTML_HEAD:     margin:  30px 0 20px;
-#+HTML_HEAD:     font-size:  18px;
+#+HTML_HEAD:     margin:  16px 0 8px;
 #+HTML_HEAD:     font-weight:  bold;
 #+HTML_HEAD:     line-height:  1.1;
 #+HTML_HEAD:     color:  #DDCAD9;
@@ -75,6 +79,7 @@
 #+HTML_HEAD:     top:  auto;
 #+HTML_HEAD:     color:  #DDCAD9;
 #+HTML_HEAD:     display:  none;
+#+HTML_HEAD:     text-align: left;
 #+HTML_HEAD: }
 #+HTML_HEAD: h1:before {
 #+HTML_HEAD:     content:  "";
@@ -217,13 +222,12 @@
 #+HTML_HEAD: td, th {
 #+HTML_HEAD:   border: 1px solid lightsteelblue;
 #+HTML_HEAD:   border-style: outset;
-#+COMMENT: #+HTML_HEAD:   display: inline-flex;
 #+HTML_HEAD: }
-#+HTML_HEAD: /******************************************************/
+
 #+HTML_HEAD: /* body */
 #+HTML_HEAD: body {
 #+HTML_HEAD:     margin:  auto auto;
-#+HTML_HEAD:     max-width:  90%;
+#+HTML_HEAD:     max-width:  98%;
 #+HTML_HEAD: }
 #+HTML_HEAD: /* head */
 #+HTML_HEAD: .masthead {
@@ -345,32 +349,43 @@
 #+HTML_HEAD:     color:  #EDF060;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
+#+HTML_HEAD: /* nav */
+#+HTML_HEAD: div.nav {
+#+HTML_HEAD:   text-align: left;
+#+HTML_HEAD:   font-size: 1.2rem;
+#+HTML_HEAD:   cursor: pointer;
+#+HTML_HEAD:   position: fixed;
+#+HTML_HEAD:   backdrop-filter: blur(6px);
+#+HTML_HEAD: }
+
 #+HTML_HEAD: /* table of content */
 #+HTML_HEAD: #table-of-contents {
-#+HTML_HEAD:     backdrop-filter: blur(6px);
+#+HTML_HEAD:   cursor: pointer;
 #+HTML_HEAD:     position:  fixed;
-#+HTML_HEAD:     right:  0em;
-#+HTML_HEAD:     top:  0em;
-#+HTML_HEAD:     border: 1px solid #e1e1e8;
-#+HTML_HEAD:     -webkit-box-shadow:  0 0 1em #777777;
-#+HTML_HEAD:     -moz-box-shadow:  0 0 1em #777777;
-#+HTML_HEAD:     -webkit-border-bottom-left-radius:  5px;
-#+HTML_HEAD:     -moz-border-radius-bottomleft:  5px;
-#+HTML_HEAD:     text-align:  center;
+#+HTML_HEAD:     right:  0.2em;
+#+HTML_HEAD:     top:  0.2em;
+# #+HTML_HEAD:     border: 1px solid #e1e1e8;
+# #+HTML_HEAD:     -webkit-box-shadow:  0 0 1em #777777;
+# #+HTML_HEAD:     -moz-box-shadow:  0 0 1em #777777;
+# #+HTML_HEAD:     -webkit-border-bottom-left-radius:  5px;
+# #+HTML_HEAD:     -moz-border-radius-bottomleft:  5px;
+#+HTML_HEAD:     text-align:  right;
 #+HTML_HEAD:     /* ensure doesn't flow off the screen when expanded */
-#+HTML_HEAD:     max-height:  80%;
+#+HTML_HEAD:     height:  auto;
 #+HTML_HEAD:     overflow:  auto;
 #+HTML_HEAD:     z-index:  200;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
 #+HTML_HEAD: #table-of-contents h2 {
-#+HTML_HEAD:   cursor: pointer;
+#+HTML_HEAD:   margin: 0.1em;
+#+HTML_HEAD:   font-size: 48px;
+#+HTML_HEAD:   font-stretch: ultra-expanded;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
 #+HTML_HEAD: #table-of-contents ul {
-#+HTML_HEAD:     margin-left:  14pt;
-#+HTML_HEAD:     margin-bottom:  10pt;
-#+HTML_HEAD:     padding:  0
+#+HTML_HEAD:   margin-left:  14pt;
+#+HTML_HEAD:   margin-bottom:  10pt;
+#+HTML_HEAD:   padding:  0
 #+HTML_HEAD: }
 #+HTML_HEAD: 
 #+HTML_HEAD: #table-of-contents li {
@@ -378,14 +393,16 @@
 #+HTML_HEAD:     margin:  1px;
 #+HTML_HEAD:     list-style:  none;
 #+HTML_HEAD: }
-#+HTML_HEAD: 
-#+HTML_HEAD: #table-of-contents ul>: first-child {
-#+HTML_HEAD:     color:  #EDF060;
+
+#+HTML_HEAD: #table-of-contents li a {
+#+HTML_HEAD:     font-size:  16px;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
 #+HTML_HEAD: #table-of-contents #text-table-of-contents {
-#+HTML_HEAD:     display:  none;
-#+HTML_HEAD:     text-align:  left;
+#+HTML_HEAD:   backdrop-filter: blur(6px);
+#+HTML_HEAD:   display:  none;
+#+HTML_HEAD:   text-align:  left;
+#+HTML_HEAD:   padding-right: 0.1em;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
 #+HTML_HEAD: #table-of-contents: hover #text-table-of-contents {
@@ -453,12 +470,41 @@
 #+HTML_HEAD: }
 #+HTML_HEAD:
 #+HTML_HEAD: .outline-2, .outline-3, .outline-4, .outline-5 {
-#+HTML_HEAD:   padding-left: 1em;
+# #+HTML_HEAD:   padding-left: 1em;
 #+HTML_HEAD: }
+
+#+HTML_HEAD: .outline-2 {
+#+HTML_HEAD:   padding-top: 1.8em;
+#+HTML_HEAD: }
+
+#+HTML_HEAD: .org-dl {
+#+HTML_HEAD:   
+#+HTML_HEAD: }
+
+#+HTML_HEAD: .org-dl dt {
+#+HTML_HEAD:   font-weight: bold;
+#+HTML_HEAD: }
+
+#+HTML_HEAD: .org-dl dt::after {
+#+HTML_HEAD:   content: " :: ";
+#+HTML_HEAD: }
+
+#+HTML_HEAD: .org-dl dd::before {
+#+HTML_HEAD:   font-size: xx-large;
+#+HTML_HEAD:   content: "  ↳ ";
+#+HTML_HEAD: }
+
+#+HTML_HEAD: .org-dl dd {
+#+HTML_HEAD:   font-size: 0.9rem;
+#+HTML_HEAD:   margin-bottom: 0.5em;
+#+HTML_HEAD:   margin-left: 2em;
+#+HTML_HEAD: }
+
 #+HTML_HEAD: .title {
 #+HTML_HEAD:   text-align: center;
+#+HTML_HEAD:   padding-top: 1.8em;
 #+HTML_HEAD: }
-#+HTML_HEAD: 
+
 #+HTML_HEAD: .status {
 #+HTML_HEAD:   position: absolute;
 #+HTML_HEAD:   left: 1em;
@@ -476,9 +522,15 @@
 #+HTML_HEAD:          elem.style.display = elem.style.display == "block" ? "none" : "block";
 #+HTML_HEAD:      }
 #+HTML_HEAD:  });
+# #+HTML_HEAD:  document.addEventListener('DOMContentLoaded',function() {
+# #+HTML_HEAD:      document.getElementById("preamble").onclick = function() {
+# #+HTML_HEAD:          var elem = document.getElementById("nav");
+# #+HTML_HEAD:          elem.style.display = elem.style.display == "block" ? "none" : "block";
+# #+HTML_HEAD:      }
+# #+HTML_HEAD:  });
 #+HTML_HEAD:
 #+HTML_HEAD:  var url = document.location.href;
-#+HTML_HEAD:  var orgsource = url.substring(0, url.lastIndexOf("."))+".org.html";
+#+HTML_HEAD:  var orgsource = url.substring(0, url.lastIndexOf("."))+".org";
 #+HTML_HEAD:  function show_org_source(){
 #+HTML_HEAD:      document.location.href = orgsource;
 #+HTML_HEAD:  }
