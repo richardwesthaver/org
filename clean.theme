@@ -57,7 +57,7 @@
 # #+HTML_HEAD:     -moz-osx-font-smoothing: grayscale;
 # #+HTML_HEAD:     font-feature-settings: "ss01", "ss03", "ss04", "ss05";
 #+HTML_HEAD:     color:  #EFFAF9;
-#+HTML_HEAD:     background-color: #3F3F37;
+#+HTML_HEAD:     background-color: #0C0F0A;
 #+HTML_HEAD: }
 
 #+HTML_HEAD: div.status {
@@ -143,7 +143,7 @@
 #+HTML_HEAD: code {
 #+HTML_HEAD:   font-family:  monospace;
 #+HTML_HEAD:   color:  #EDF060;
-#+HTML_HEAD:   background-color:  #3F3F37;
+#+HTML_HEAD:   background-color:  #303330;
 #+HTML_HEAD: }
 #+HTML_HEAD: code:before, code:after {
 #+HTML_HEAD:     content:  "=";
@@ -162,16 +162,22 @@
 #+HTML_HEAD:     margin:  0 0 14px;
 #+HTML_HEAD:     padding:  15px;
 #+HTML_HEAD:     border-radius:  3px 3px 3px 3px;
-#+HTML_HEAD:     background-color:  #3F3F37;
+#+HTML_HEAD:     background-color:  #303030;
 # #+HTML_HEAD:     word-break:  break-all;
 # #+HTML_HEAD:     word-wrap:  break-word;
 #+HTML_HEAD: }
+#+HTML_HEAD: 
 #+HTML_HEAD: blockquote {
 #+HTML_HEAD:     padding:  0 0 0 20px;
 #+HTML_HEAD:     margin:  0 30px 20px -22.5px;
 #+HTML_HEAD:     color:  #EDF060;
 #+HTML_HEAD:     border-left:  8px solid #e5e5e5;
 #+HTML_HEAD: }
+
+#+HTML_HEAD: pre.example {
+#+HTML_HEAD:     border-left:  8px solid #493657;
+#+HTML_HEAD: }
+
 #+HTML_HEAD: blockquote p: last-child {
 #+HTML_HEAD:     margin-bottom:  0;
 #+HTML_HEAD: }
@@ -350,11 +356,32 @@
 #+HTML_HEAD: }
 #+HTML_HEAD: 
 #+HTML_HEAD: /* nav */
-#+HTML_HEAD: div.nav {
+#+HTML_HEAD: div #nav {
+#+HTML_HEAD:   z-index: 10;
+#+HTML_HEAD:   top:  0.2em;
+#+HTML_HEAD:   left: 0.2em;
 #+HTML_HEAD:   text-align: left;
 #+HTML_HEAD:   font-size: 1.2rem;
 #+HTML_HEAD:   cursor: pointer;
 #+HTML_HEAD:   position: fixed;
+#+HTML_HEAD: }
+
+#+HTML_HEAD: div #nav h2 {
+#+HTML_HEAD:   margin: 0em;
+#+HTML_HEAD: }
+
+#+HTML_HEAD: #index {
+#+HTML_HEAD:   display: block;
+#+HTML_HEAD:   text-align: left;
+#+HTML_HEAD:   color:  #DDCAD9;
+#+HTML_HEAD:   font-size: 48px;
+#+HTML_HEAD:   font-stretch: ultra-expanded;
+#+HTML_HEAD: }
+
+#+HTML_HEAD: div #text-index {
+#+HTML_HEAD:   color:  #EDF060;
+#+HTML_HEAD:   display:  none;
+#+HTML_HEAD:   text-align:  left;
 #+HTML_HEAD:   backdrop-filter: blur(6px);
 #+HTML_HEAD: }
 
@@ -373,13 +400,13 @@
 #+HTML_HEAD:     /* ensure doesn't flow off the screen when expanded */
 #+HTML_HEAD:     height:  auto;
 #+HTML_HEAD:     overflow:  auto;
-#+HTML_HEAD:     z-index:  200;
+#+HTML_HEAD:     z-index:  8;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
 #+HTML_HEAD: #table-of-contents h2 {
-#+HTML_HEAD:   margin: 0.1em;
+#+HTML_HEAD:   margin: 0em;
 #+HTML_HEAD:   font-size: 48px;
-#+HTML_HEAD:   font-stretch: ultra-expanded;
+# #+HTML_HEAD:   font-stretch: ultra-expanded;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
 #+HTML_HEAD: #table-of-contents ul {
@@ -522,12 +549,12 @@
 #+HTML_HEAD:          elem.style.display = elem.style.display == "block" ? "none" : "block";
 #+HTML_HEAD:      }
 #+HTML_HEAD:  });
-# #+HTML_HEAD:  document.addEventListener('DOMContentLoaded',function() {
-# #+HTML_HEAD:      document.getElementById("preamble").onclick = function() {
-# #+HTML_HEAD:          var elem = document.getElementById("nav");
-# #+HTML_HEAD:          elem.style.display = elem.style.display == "block" ? "none" : "block";
-# #+HTML_HEAD:      }
-# #+HTML_HEAD:  });
+#+HTML_HEAD:  document.addEventListener('DOMContentLoaded',function() {
+#+HTML_HEAD:      document.getElementById("nav").onclick = function() {
+#+HTML_HEAD:          var elem = document.getElementById("text-index");
+#+HTML_HEAD:          elem.style.display = elem.style.display == "block" ? "none" : "block";
+#+HTML_HEAD:      }
+#+HTML_HEAD:  });
 #+HTML_HEAD:
 #+HTML_HEAD:  var url = document.location.href;
 #+HTML_HEAD:  var orgsource = url.substring(0, url.lastIndexOf("."))+".org";
