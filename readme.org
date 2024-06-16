@@ -3,7 +3,7 @@
 #+email: richard.westhaver@gmail.com
 #+setupfile: clean.theme
 #+export_file_name: index
-#+OPTIONS: ^:nil toc:nil num:nil html-postamble:nil
+#+OPTIONS: ^:nil toc:nil num:nil html-postamble:nil html-preamble:nil
 * [[file:blog][blog]] 
 :PROPERTIES:
 :ID:       bdaf5213-bbff-4a67-9a36-bd0af4bff4c3
