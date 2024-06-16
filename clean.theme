@@ -2,10 +2,8 @@
 #+STARTUP: entitiespretty
 #+language: ulang
 #+DATE: {{{modification-time("%F %r", t)}}}
-#+OPTIONS: org-html-head-include-default-style:t ^:nil _:nil email:t \n:nil Tex:t LaTeX:t broken-links:mark
+#+OPTIONS: org-html-head-include-default-style:t ^:nil _:nil email:t \n:nil Tex:t LaTeX:t broken-links:mark toc:nil
 #+HTML_DOCTYPE: html5
-# #+HTML_LINK_HOME: https://compiler.company
-# #+HTML_LINK_UP: ..
 #+LATEX_HEADER: \usepackage{placeins}
 #+LATEX_HEADER: \usepackage{parskip}
 #+LATEX_HEADER: \usepackage{xcolor}
@@ -400,7 +398,7 @@
 #+HTML_HEAD:     text-align:  right;
 #+HTML_HEAD:     /* ensure doesn't flow off the screen when expanded */
 #+HTML_HEAD:     height:  auto;
-#+HTML_HEAD:     overflow-y: scroll;
+# #+HTML_HEAD:     overflow-y: scroll;
 #+HTML_HEAD:     z-index:  11;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
