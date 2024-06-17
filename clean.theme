@@ -531,6 +531,10 @@
 #+HTML_HEAD:   padding-top: 1.8em;
 #+HTML_HEAD: }
 
+#+HTML_HEAD: div#postamble.status {
+#+HTML_HEAD:   text-align: left;
+#+HTML_HEAD: }
+
 #+HTML_HEAD: .status {
 #+HTML_HEAD:   position: absolute;
 #+HTML_HEAD:   left: 1em;
