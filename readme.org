@@ -16,7 +16,6 @@
 :PROPERTIES:
 :ID:       6a08e4d7-982a-4dbb-a007-b58e96cbe2e9
 :END:
-
 * [[file:notes][notes]]
 :PROPERTIES:
 :ID:       fbf365dd-0a36-4b0e-bfff-c8655eb80a51
