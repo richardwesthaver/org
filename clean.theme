@@ -534,7 +534,71 @@
 #+HTML_HEAD: div#postamble.status {
 #+HTML_HEAD:   text-align: left;
 #+HTML_HEAD: }
-
+#+HTML_HEAD: .org-org-ref-acronym {
+#+HTML_HEAD:     /* org-ref-acronym-face */
+#+HTML_HEAD:     color: #ee7600;
+#+HTML_HEAD:     text-decoration: underline;
+#+HTML_HEAD: }
+#+HTML_HEAD: .org-org-ref-cite {
+#+HTML_HEAD:     /* org-ref-cite-face */
+#+HTML_HEAD:     color: #c3d5c3;
+#+HTML_HEAD:     text-decoration: underline;
+#+HTML_HEAD: }
+#+HTML_HEAD: .org-org-ref-glossary {
+#+HTML_HEAD:     /* org-ref-glossary-face */
+#+HTML_HEAD:     color: #8968cd;
+#+HTML_HEAD:     text-decoration: underline;
+#+HTML_HEAD: }
+#+HTML_HEAD: .org-org-ref-label {
+#+HTML_HEAD:     /* org-ref-label-face */
+#+HTML_HEAD:     color: #8b008b;
+#+HTML_HEAD:     text-decoration: underline;
+#+HTML_HEAD: }
+#+HTML_HEAD: .org-org-ref-ref {
+#+HTML_HEAD:     /* org-ref-ref-face */
+#+HTML_HEAD:     color: #e1cc96;
+#+HTML_HEAD:     text-decoration: underline;
+#+HTML_HEAD: }
+#+HTML_HEAD: .org-org-scheduled {
+#+HTML_HEAD:     /* org-scheduled */
+#+HTML_HEAD:     color: #006400;
+#+HTML_HEAD: }
+#+HTML_HEAD: .org-org-scheduled-previously {
+#+HTML_HEAD:     /* org-scheduled-previously */
+#+HTML_HEAD:     color: #b22222;
+#+HTML_HEAD: }
+#+HTML_HEAD: .org-org-scheduled-today {
+#+HTML_HEAD:     /* org-scheduled-today */
+#+HTML_HEAD:     color: #006400;
+#+HTML_HEAD: }
+#+HTML_HEAD: .org-org-sexp-date {
+#+HTML_HEAD:     /* org-sexp-date */
+#+HTML_HEAD:     color: #a020f0;
+#+HTML_HEAD: }
+#+HTML_HEAD: .org-org-special-keyword {
+#+HTML_HEAD:     /* org-special-keyword */
+#+HTML_HEAD:     color: #a020f0;
+#+HTML_HEAD: }
+#+HTML_HEAD: .org-org-todo {
+#+HTML_HEAD:     /* org-todo */
+#+HTML_HEAD:     color: #ff0000;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD: }
+#+HTML_HEAD: .org-org-upcoming-deadline {
+#+HTML_HEAD:     /* org-upcoming-deadline */
+#+HTML_HEAD:     color: #b22222;
+#+HTML_HEAD: }
+#+HTML_HEAD: .org-org-upcoming-distant-deadline {
+#+HTML_HEAD:     /* org-upcoming-distant-deadline */
+#+HTML_HEAD:     color: #000000;
+#+HTML_HEAD:     background-color: #ffffff;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: .org-org-warning {
+#+HTML_HEAD:     /* org-warning */
+#+HTML_HEAD:     color: #ff0000;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD: }
 #+HTML_HEAD: .status {
 #+HTML_HEAD:   position: absolute;
 #+HTML_HEAD:   left: 1em;
