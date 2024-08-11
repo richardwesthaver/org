@@ -4,6 +4,10 @@
 #+setupfile: clean.theme
 #+export_file_name: index
 #+OPTIONS: ^:nil toc:nil num:nil html-postamble:nil html-preamble:nil
+* [[file:meta][meta]]
+:PROPERTIES:
+:ID:       db2f6d7e-068c-401d-9cf6-a8bb9fad5ef1
+:END:
 * [[file:blog][blog]] 
 :PROPERTIES:
 :ID:       bdaf5213-bbff-4a67-9a36-bd0af4bff4c3

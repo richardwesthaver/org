@@ -168,8 +168,8 @@
 #+HTML_HEAD: blockquote {
 #+HTML_HEAD:     padding:  0 0 0 20px;
 #+HTML_HEAD:     margin:  0 30px 20px -22.5px;
-#+HTML_HEAD:     color:  #EDF060;
-#+HTML_HEAD:     border-left:  8px solid #e5e5e5;
+#+HTML_HEAD:     color:  #AAD3F8;
+#+HTML_HEAD:     border-left:  8px solid #B08889;
 #+HTML_HEAD: }
 
 #+HTML_HEAD: pre.example {
@@ -582,6 +582,19 @@
 #+HTML_HEAD: .org-org-todo {
 #+HTML_HEAD:     /* org-todo */
 #+HTML_HEAD:     color: #ff0000;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD: }
+#+HTML_HEAD: .org-org-done {
+#+HTML_HEAD:     /* org-done */
+#+HTML_HEAD:     color: #85BB41;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD: }
+#+HTML_HEAD: .PROJECT {
+#+HTML_HEAD:     color: lightseagreen;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD: }
+#+HTML_HEAD: .NOTE {
+#+HTML_HEAD:     color: lemonchiffon;
 #+HTML_HEAD:     font-weight: bold;
 #+HTML_HEAD: }
 #+HTML_HEAD: .org-org-upcoming-deadline {
