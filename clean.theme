@@ -597,6 +597,62 @@
 #+HTML_HEAD:     color: lemonchiffon;
 #+HTML_HEAD:     font-weight: bold;
 #+HTML_HEAD: }
+#+HTML_HEAD: .PRODUCT {
+#+HTML_HEAD:     color: olivedrab;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD: }
+#+HTML_HEAD: .RELEASE {
+#+HTML_HEAD:     color: maroon3;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD: }
+#+HTML_HEAD: .NOTE {
+#+HTML_HEAD:     color: lemonchiffon;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD: }
+#+HTML_HEAD: .CODE {
+#+HTML_HEAD:     color: bisque;
+#+HTML_HEAD:     background-color: midnightblue;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD: }
+#+HTML_HEAD: .HOLD {
+#+HTML_HEAD:     color: red1;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD:     background-color: yellow1;
+#+HTML_HEAD: }
+#+HTML_HEAD: .WAIT {
+#+HTML_HEAD:     color: red;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD:     background-color: yellow1;
+#+HTML_HEAD: }
+#+HTML_HEAD: .WIP {
+#+HTML_HEAD:     color: darkorchid;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD: }
+#+HTML_HEAD: .NOPE {
+#+HTML_HEAD:     color: hotpink;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD:     background-color: darkgreen;
+#+HTML_HEAD: }
+#+HTML_HEAD: .RESEARCH {
+#+HTML_HEAD:     color: maroon;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD: }
+#+HTML_HEAD: .DONE {
+#+HTML_HEAD:     color: green;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD: }
+#+HTML_HEAD: .TODO {
+#+HTML_HEAD:     color: red;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD: }
+#+HTML_HEAD: .TBD {
+#+HTML_HEAD:     color: darkred;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD: }
+#+HTML_HEAD: .HACK {
+#+HTML_HEAD:     color: coral;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD: }
 #+HTML_HEAD: .org-org-upcoming-deadline {
 #+HTML_HEAD:     /* org-upcoming-deadline */
 #+HTML_HEAD:     color: #b22222;
