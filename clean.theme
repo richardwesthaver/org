@@ -645,12 +645,20 @@
 #+HTML_HEAD:     color: red;
 #+HTML_HEAD:     font-weight: bold;
 #+HTML_HEAD: }
+#+HTML_HEAD: .TEST {
+#+HTML_HEAD:     color: orange;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD: }
 #+HTML_HEAD: .TBD {
 #+HTML_HEAD:     color: darkred;
 #+HTML_HEAD:     font-weight: bold;
 #+HTML_HEAD: }
 #+HTML_HEAD: .HACK {
 #+HTML_HEAD:     color: coral;
+#+HTML_HEAD:     font-weight: bold;
+#+HTML_HEAD: }
+#+HTML_HEAD: .SPRINT {
+#+HTML_HEAD:     color: violet;
 #+HTML_HEAD:     font-weight: bold;
 #+HTML_HEAD: }
 #+HTML_HEAD: .org-org-upcoming-deadline {
