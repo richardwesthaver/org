@@ -2,8 +2,10 @@
 #+STARTUP: entitiespretty
 #+language: ulang
 #+DATE: {{{modification-time("%F %r", t)}}}
-#+OPTIONS: org-html-head-include-default-style:t ^:nil _:nil email:t \n:nil Tex:t LaTeX:t broken-links:mark toc:nil
+#+OPTIONS: org-html-head-include-default-style:t ^:nil _:nil email:t \n:nil Tex:t LaTeX:t broken-links:mark toc:t
 #+HTML_DOCTYPE: html5
+#+HTML_LINK_HOME: https://compiler.company
+#+HTML_LINK_UP: https://compiler.company
 #+LATEX_HEADER: \usepackage{placeins}
 #+LATEX_HEADER: \usepackage{parskip}
 #+LATEX_HEADER: \usepackage{xcolor}
@@ -18,57 +20,31 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/font/3270.css" />
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/font/pragmata-pro.css" />
 
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/css/htmlize.css" />
+#+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.compiler.company/js/jquery.min.js"></script>
+#+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.compiler.company/js/esquemadorg.js"></script>
 
-#+HTML_HEAD:  <style type="text/css">
-#+HTML_HEAD: 
-#+HTML_HEAD: *,
-#+HTML_HEAD: *::before,
-#+HTML_HEAD: *::after {
-#+HTML_HEAD:     box-sizing: border-box;
-#+HTML_HEAD:     margin: 0;
-#+HTML_HEAD:     padding: 0;
-#+HTML_HEAD: }
-#+HTML_HEAD: :root {
-#+HTML_HEAD:     --text: #111;
-#+HTML_HEAD:     --middle: #555;
-#+HTML_HEAD:     --bg: #aaa;
-#+HTML_HEAD:     --max-width: 54ch;
-#+HTML_HEAD:     font-size: 16px;
-#+HTML_HEAD: }
-#+HTML_HEAD: /* @media (prefers-color-scheme: dark) {
-#+HTML_HEAD:     :root {
-#+HTML_HEAD:         --text: #aaa;
-#+HTML_HEAD:         --middle: #555;
-#+HTML_HEAD:         --bg: #111;
-#+HTML_HEAD:     }
-#+HTML_HEAD: } */
-#+HTML_HEAD: * {
-#+HTML_HEAD:     -webkit-box-sizing:  border-box;
-#+HTML_HEAD:        -moz-box-sizing:  border-box;
-#+HTML_HEAD:             box-sizing:  border-box;
-#+HTML_HEAD: }
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/css/htmlize.css" />
+#+HTML_HEAD: <style type="text/css">
 #+HTML_HEAD: body {
 #+HTML_HEAD:     font-family:  "CommitMono", monospace;
-#+HTML_HEAD:     font-size:  14px;
-# #+HTML_HEAD:     -webkit-font-smoothing: antialiased;
-# #+HTML_HEAD:     -moz-osx-font-smoothing: grayscale;
-# #+HTML_HEAD:     font-feature-settings: "ss01", "ss03", "ss04", "ss05";
+#+HTML_HEAD:     -webkit-font-smoothing: antialiased;
+#+HTML_HEAD:     -moz-osx-font-smoothing: grayscale;
+#+HTML_HEAD:     font-feature-settings: "ss01", "ss03", "ss04", "ss05";
 #+HTML_HEAD:     color:  #EFFAF9;
 #+HTML_HEAD:     background-color: #0C0F0A;
 #+HTML_HEAD: }
 
 #+HTML_HEAD: div.status {
-# #+HTML_HEAD:     position: fixed;
+#+HTML_HEAD:     position: fixed;
 # #+HTML_HEAD:     margin: 0.2em;
 #+HTML_HEAD:     text-align: center;
 #+HTML_HEAD: }
 
 #+HTML_HEAD: h1, h2, h3, h4, h5, h6 {
 #+HTML_HEAD:     position:  relative;
-#+HTML_HEAD:     margin:  16px 0 8px;
+# #+HTML_HEAD:     margin:  16px 0 8px;
 #+HTML_HEAD:     font-weight:  bold;
-#+HTML_HEAD:     line-height:  1.1;
+# #+HTML_HEAD:     line-height:  1.1;
 #+HTML_HEAD:     color:  #DDCAD9;
 #+HTML_HEAD:     text-rendering:  optimizeLegibility;
 #+HTML_HEAD: }
@@ -232,7 +208,7 @@
 #+HTML_HEAD: /* body */
 #+HTML_HEAD: body {
 #+HTML_HEAD:     margin:  auto auto;
-#+HTML_HEAD:     max-width:  98%;
+# #+HTML_HEAD:     max-width:  98%;
 #+HTML_HEAD: }
 #+HTML_HEAD: /* head */
 #+HTML_HEAD: .masthead {
@@ -241,7 +217,7 @@
 #+HTML_HEAD: .masthead: after {
 #+HTML_HEAD:     display:  block;
 #+HTML_HEAD:     content:  '----------------------------------------------------------------';
-#+HTML_HEAD:     margin:  10px 0;
+# #+HTML_HEAD:     margin:  10px 0;
 #+HTML_HEAD:     color:  #EDF060;
 #+HTML_HEAD: }
 #+HTML_HEAD: .masthead a {
@@ -384,59 +360,59 @@
 #+HTML_HEAD:   backdrop-filter: blur(6px);
 #+HTML_HEAD: }
 
-#+HTML_HEAD: /* table of content */
-#+HTML_HEAD: nav, #table-of-contents {
-#+HTML_HEAD:   cursor: pointer;
-#+HTML_HEAD:     position:  fixed;
-#+HTML_HEAD:     right:  0.2em;
-#+HTML_HEAD:     top:  0.2em;
+# #+HTML_HEAD: /* table of content */
+# #+HTML_HEAD: nav, #table-of-contents {
+# #+HTML_HEAD:   cursor: pointer;
+# #+HTML_HEAD:     position:  fixed;
+# #+HTML_HEAD:     right:  0.2em;
+# #+HTML_HEAD:     top:  0.2em;
 # #+HTML_HEAD:     border: 1px solid #e1e1e8;
-#+HTML_HEAD:     -webkit-box-shadow:  0 0 1em #777777;
-#+HTML_HEAD:     -moz-box-shadow:  0 0 1em #777777;
-#+HTML_HEAD:     -webkit-border-bottom-left-radius:  5px;
-#+HTML_HEAD:     -moz-border-radius-bottomleft:  5px;
-#+HTML_HEAD:     text-align:  right;
-#+HTML_HEAD:     /* ensure doesn't flow off the screen when expanded */
-#+HTML_HEAD:     height:  auto;
+# #+HTML_HEAD:     -webkit-box-shadow:  0 0 1em #777777;
+# #+HTML_HEAD:     -moz-box-shadow:  0 0 1em #777777;
+# #+HTML_HEAD:     -webkit-border-bottom-left-radius:  5px;
+# #+HTML_HEAD:     -moz-border-radius-bottomleft:  5px;
+# #+HTML_HEAD:     text-align:  right;
+# #+HTML_HEAD:     /* ensure doesn't flow off the screen when expanded */
+# #+HTML_HEAD:     height:  auto;
 # #+HTML_HEAD:     overflow-y: scroll;
-#+HTML_HEAD:     z-index:  11;
-#+HTML_HEAD: }
-#+HTML_HEAD: 
-#+HTML_HEAD: #table-of-contents h2 {
-#+HTML_HEAD:   margin: 0em;
-#+HTML_HEAD:   font-size: 48px;
+# #+HTML_HEAD:     z-index:  11;
+# #+HTML_HEAD: }
+# #+HTML_HEAD: 
+# #+HTML_HEAD: #table-of-contents h2 {
+# #+HTML_HEAD:   margin: 0em;
+# #+HTML_HEAD:   font-size: 48px;
 # #+HTML_HEAD:   font-stretch: ultra-expanded;
-#+HTML_HEAD: }
+# #+HTML_HEAD: }
 #+HTML_HEAD: 
-#+HTML_HEAD: #table-of-contents ul {
-#+HTML_HEAD:   margin-left:  14pt;
-#+HTML_HEAD:   margin-bottom:  10pt;
-#+HTML_HEAD:   padding:  0
-#+HTML_HEAD: }
+# #+HTML_HEAD: #table-of-contents ul {
+# #+HTML_HEAD:   margin-left:  14pt;
+# #+HTML_HEAD:   margin-bottom:  10pt;
+# #+HTML_HEAD:   padding:  0
+# #+HTML_HEAD: }
 #+HTML_HEAD: 
-#+HTML_HEAD: #table-of-contents li {
-#+HTML_HEAD:     padding:  0;
-#+HTML_HEAD:     margin:  1px;
-#+HTML_HEAD:     list-style:  none;
-#+HTML_HEAD: }
+# #+HTML_HEAD: #table-of-contents li {
+# #+HTML_HEAD:     padding:  0;
+# #+HTML_HEAD:     margin:  1px;
+# #+HTML_HEAD:     list-style:  none;
+# #+HTML_HEAD: }
 
-#+HTML_HEAD: #table-of-contents li a {
-#+HTML_HEAD:     font-size:  16px;
-#+HTML_HEAD: }
-#+HTML_HEAD: 
-#+HTML_HEAD: #table-of-contents #text-table-of-contents {
-#+HTML_HEAD:   backdrop-filter: blur(6px);
-#+HTML_HEAD:   display:  none;
-#+HTML_HEAD:   text-align:  left;
-#+HTML_HEAD:   padding-right: 0.1em;
-#+HTML_HEAD: }
-#+HTML_HEAD: 
-#+HTML_HEAD: #table-of-contents: hover #text-table-of-contents {
-#+HTML_HEAD:     display:  block;
-#+HTML_HEAD:     padding:  0.5em;
-#+HTML_HEAD:     margin-top:  -1.5em;
-#+HTML_HEAD: }
-#+HTML_HEAD: 
+# #+HTML_HEAD: #table-of-contents li a {
+# #+HTML_HEAD:     font-size:  16px;
+# #+HTML_HEAD: }
+# #+HTML_HEAD: 
+# #+HTML_HEAD: #table-of-contents #text-table-of-contents {
+# #+HTML_HEAD:   backdrop-filter: blur(6px);
+# #+HTML_HEAD:   display:  none;
+# #+HTML_HEAD:   text-align:  left;
+# #+HTML_HEAD:   padding-right: 0.1em;
+# #+HTML_HEAD: }
+# #+HTML_HEAD: 
+# #+HTML_HEAD: #table-of-contents: hover #text-table-of-contents {
+# #+HTML_HEAD:     display:  block;
+# #+HTML_HEAD:     padding:  0.5em;
+# #+HTML_HEAD:     margin-top:  -1.5em;
+# #+HTML_HEAD: }
+# #+HTML_HEAD: 
 #+HTML_HEAD: /* footer */
 #+HTML_HEAD: .footer {
 #+HTML_HEAD:     margin:  80px 0 0;
@@ -499,9 +475,9 @@
 # #+HTML_HEAD:   padding-left: 1em;
 #+HTML_HEAD: }
 
-#+HTML_HEAD: .outline-2 {
-#+HTML_HEAD:   padding-top: 1.8em;
-#+HTML_HEAD: }
+# #+HTML_HEAD: .outline-2 {
+# #+HTML_HEAD:   padding-top: 1.8em;
+# #+HTML_HEAD: }
 
 #+HTML_HEAD: .org-dl {
 #+HTML_HEAD:   
@@ -528,7 +504,7 @@
 
 #+HTML_HEAD: .title {
 #+HTML_HEAD:   text-align: center;
-#+HTML_HEAD:   padding-top: 1.8em;
+# #+HTML_HEAD:   padding-top: 1.8em;
 #+HTML_HEAD: }
 
 #+HTML_HEAD: div#postamble.status {
@@ -687,18 +663,18 @@
 #+HTML_HEAD: 
 #+HTML_HEAD:  </style>
 #+HTML_HEAD:<script type="text/javascript">
-#+HTML_HEAD:  document.addEventListener('DOMContentLoaded',function() {
-#+HTML_HEAD:      document.getElementById("table-of-contents").onclick = function() {
-#+HTML_HEAD:          var elem = document.getElementById("text-table-of-contents");
-#+HTML_HEAD:          elem.style.display = elem.style.display == "block" ? "none" : "block";
-#+HTML_HEAD:      }
-#+HTML_HEAD:  });
-#+HTML_HEAD:  document.addEventListener('DOMContentLoaded',function() {
-#+HTML_HEAD:      document.getElementById("nav").onclick = function() {
-#+HTML_HEAD:          var elem = document.getElementById("text-index");
-#+HTML_HEAD:          elem.style.display = elem.style.display == "block" ? "none" : "block";
-#+HTML_HEAD:      }
-#+HTML_HEAD:  });
+# #+HTML_HEAD:  document.addEventListener('DOMContentLoaded',function() {
+# #+HTML_HEAD:      document.getElementById("table-of-contents").onclick = function() {
+# #+HTML_HEAD:          var elem = document.getElementById("text-table-of-contents");
+# #+HTML_HEAD:          elem.style.display = elem.style.display == "block" ? "none" : "block";
+# #+HTML_HEAD:      }
+# #+HTML_HEAD:  });
+# #+HTML_HEAD:  document.addEventListener('DOMContentLoaded',function() {
+# #+HTML_HEAD:      document.getElementById("nav").onclick = function() {
+# #+HTML_HEAD:          var elem = document.getElementById("text-index");
+# #+HTML_HEAD:          elem.style.display = elem.style.display == "block" ? "none" : "block";
+# #+HTML_HEAD:      }
+# #+HTML_HEAD:  });
 #+HTML_HEAD:
 #+HTML_HEAD:  var url = document.location.href;
 #+HTML_HEAD:  var orgsource = url.substring(0, url.lastIndexOf("."))+".org";
