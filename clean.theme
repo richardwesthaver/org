@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       d31224e1-4ef6-44f9-8350-4f890735f164
+:END:
 ; -*- mode: org -*-
 #+STARTUP: entitiespretty
 #+language: ulang
@@ -359,7 +362,20 @@
 #+HTML_HEAD:   text-align:  left;
 #+HTML_HEAD:   backdrop-filter: blur(6px);
 #+HTML_HEAD: }
-
+#+HTML_HEAD: #org-div-home-and-up {
+#+HTML_HEAD:   display: inline-flex;
+#+HTML_HEAD: }
+#+HTML_HEAD: button {
+#+HTML_HEAD:   border: none;
+#+HTML_HEAD:   background-color: inherit;
+#+HTML_HEAD:   color: silver;
+#+HTML_HEAD:   font-size: 16px;
+#+HTML_HEAD:   cursor: pointer;
+#+HTML_HEAD: }
+#+HTML_HEAD: button:hover {background: #3F3F37; color:#EDF060;}
+#+HTML_HEAD: .show {text-decoration: overline; float:right;}
+#+HTML_HEAD: .hide {text-decoration: underline; float:right; text-underline-offset:0.2em;}
+#+HTML_HEAD: .home {text-decoration: overline; float:left; font-size:24px;}
 # #+HTML_HEAD: /* table of content */
 # #+HTML_HEAD: nav, #table-of-contents {
 # #+HTML_HEAD:   cursor: pointer;
