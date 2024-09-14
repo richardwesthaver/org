@@ -4,23 +4,34 @@
 #+setupfile: clean.theme
 #+export_file_name: index
 #+OPTIONS: ^:nil toc:nil num:nil html-postamble:nil html-preamble:nil
+Welcome to The Compiler Company (CC).
+
+- [[https://vc.compiler.company][vc]] :: source code
+- [[https://packy.compiler.company][packy]] :: packages
+- [[https://cdn.compiler.company][cdn]] :: assets
+
 * [[file:meta/][meta]]
 :PROPERTIES:
 :ID:       db2f6d7e-068c-401d-9cf6-a8bb9fad5ef1
 :END:
-* [[file:blog/][blog]] 
+CC internal documentation
+* [[file:blog/][blog]]
 :PROPERTIES:
 :ID:       bdaf5213-bbff-4a67-9a36-bd0af4bff4c3
 :END:
+Latest CC posts
 * [[file:docs/][docs]] 
 :PROPERTIES:
 :ID:       64f2e1c6-d1af-44b0-85e4-dc1f85201f82
 :END:
+Project and product documentation
 * [[file:plan/][plan]]
 :PROPERTIES:
 :ID:       6a08e4d7-982a-4dbb-a007-b58e96cbe2e9
 :END:
+Roadmap and tasks
 * [[file:notes/][notes]]
 :PROPERTIES:
 :ID:       fbf365dd-0a36-4b0e-bfff-c8655eb80a51
 :END:
+CC notes

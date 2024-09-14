@@ -47,40 +47,6 @@
 #+HTML_HEAD:     color:  #DDCAD9;
 #+HTML_HEAD:     text-rendering:  optimizeLegibility;
 #+HTML_HEAD: }
-#+HTML_HEAD: h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
-#+HTML_HEAD:     position:  absolute;
-#+HTML_HEAD:     top:  auto;
-#+HTML_HEAD:     color:  #DDCAD9;
-#+HTML_HEAD:     display:  none;
-#+HTML_HEAD:     text-align: left;
-#+HTML_HEAD: }
-#+HTML_HEAD: h1:before {
-#+HTML_HEAD:     content:  "";
-#+HTML_HEAD:     left:  -1.25em;
-#+HTML_HEAD: }
-#+HTML_HEAD: h2:before {
-#+HTML_HEAD:     content:  "*";
-#+HTML_HEAD:     left:  -2em;
-#+HTML_HEAD:     color: #DDCAD9;
-#+HTML_HEAD: }
-#+HTML_HEAD: h3:before {
-#+HTML_HEAD:     content:  "**";
-#+HTML_HEAD:     left:  -2em;
-#+HTML_HEAD:     color: #DDCAD9;
-#+HTML_HEAD: }
-#+HTML_HEAD: h4:before {
-#+HTML_HEAD:     content:  "***";
-#+HTML_HEAD:     left:  -3em;
-#+HTML_HEAD:     color: #DDCAD9;
-#+HTML_HEAD: }
-#+HTML_HEAD: h5:before {
-#+HTML_HEAD:     content:  "****";
-#+HTML_HEAD:     left:  -3em;
-#+HTML_HEAD: }
-#+HTML_HEAD: h6:before {
-#+HTML_HEAD:     content:  "*****";
-#+HTML_HEAD:     left:  -4em;
-#+HTML_HEAD: }
 #+HTML_HEAD: i, em, b, strong {
 #+HTML_HEAD:     padding-left:  .1em;
 #+HTML_HEAD:     padding-right:  .1em;
@@ -360,10 +326,13 @@
 #+HTML_HEAD: }
 #+HTML_HEAD: #org-div-home-and-up {
 #+HTML_HEAD:   display: inline-flex;
+#+HTML_HEAD:   position: sticky;
+#+HTML_HEAD:   top: 0;
+#+HTML_HEAD:   overflow: hidden;
 #+HTML_HEAD: }
 #+HTML_HEAD: button {
 #+HTML_HEAD:   border: none;
-#+HTML_HEAD:   background-color: inherit;
+#+HTML_HEAD:   background-color: black;
 #+HTML_HEAD:   color: silver;
 #+HTML_HEAD:   font-size: 16px;
 #+HTML_HEAD:   cursor: pointer;
@@ -450,13 +419,8 @@
 #+HTML_HEAD:     /* Increase body padding and font-sizes */
 #+HTML_HEAD:     body {
 #+HTML_HEAD:         padding: 2em;
-#+HTML_HEAD:         max-width: 70%;
-#+HTML_HEAD:     }
-#+HTML_HEAD:     h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
-#+HTML_HEAD:         display:  inline;
 #+HTML_HEAD:     }
 #+HTML_HEAD: }
-#+HTML_HEAD: 
 
 # custom
 #+HTML_HEAD: .subtitle {
@@ -492,27 +456,12 @@
 # #+HTML_HEAD:   padding-top: 1.8em;
 # #+HTML_HEAD: }
 
-#+HTML_HEAD: .org-dl {
-#+HTML_HEAD:   
-#+HTML_HEAD: }
-
 #+HTML_HEAD: .org-dl dt {
 #+HTML_HEAD:   font-weight: bold;
 #+HTML_HEAD: }
 
-#+HTML_HEAD: .org-dl dt::after {
-#+HTML_HEAD:   content: " :: ";
-#+HTML_HEAD: }
-
 #+HTML_HEAD: .org-dl dd::before {
-#+HTML_HEAD:   font-size: xx-large;
-#+HTML_HEAD:   content: "  ↳ ";
-#+HTML_HEAD: }
-
-#+HTML_HEAD: .org-dl dd {
-#+HTML_HEAD:   font-size: 0.9rem;
-#+HTML_HEAD:   margin-bottom: 0.5em;
-#+HTML_HEAD:   margin-left: 2em;
+#+HTML_HEAD:   content: "  : ";
 #+HTML_HEAD: }
 
 #+HTML_HEAD: .title {
