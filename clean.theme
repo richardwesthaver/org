@@ -24,6 +24,9 @@
 
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/css/htmlize.css" />
 #+HTML_HEAD: <style type="text/css">
+#+HTML_HEAD: html {
+#+HTML_HEAD:     scroll-padding-top: 2em;
+#+HTML_HEAD: }
 #+HTML_HEAD: body {
 #+HTML_HEAD:     font-family:  "CommitMono", monospace;
 #+HTML_HEAD:     -webkit-font-smoothing: antialiased;
@@ -41,10 +44,8 @@
 
 #+HTML_HEAD: h1, h2, h3, h4, h5, h6 {
 #+HTML_HEAD:     position:  relative;
-# #+HTML_HEAD:     margin:  16px 0 8px;
 #+HTML_HEAD:     font-weight:  bold;
-# #+HTML_HEAD:     line-height:  1.1;
-#+HTML_HEAD:     color:  #DDCAD9;
+#+HTML_HEAD:     color: cornsilk;
 #+HTML_HEAD:     text-rendering:  optimizeLegibility;
 #+HTML_HEAD: }
 #+HTML_HEAD: i, em, b, strong {
