@@ -15,14 +15,14 @@
 #+LATEX_HEADER: \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 #+LATEX_HEADER: \hypersetup{colorlinks, citecolor=red,filecolor=magenta,linkcolor=magenta,urlcolor=magenta}
 
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/font/commit-mono.css" />
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/font/3270.css" />
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/font/pragmata-pro.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://compiler.company/font/commit-mono.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://compiler.company/font/3270.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://compiler.company/font/pragmata-pro.css" />
 
-#+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.compiler.company/js/jquery.min.js"></script>
-#+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.compiler.company/js/esquemadorg.js"></script>
+#+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://compiler.company/js/jquery.min.js"></script>
+#+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://compiler.company/js/esquemadorg.js"></script>
 
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/css/htmlize.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://compiler.company/css/htmlize.css" />
 #+HTML_HEAD: <style type="text/css">
 #+HTML_HEAD: html {
 #+HTML_HEAD:     scroll-padding-top: 2em;

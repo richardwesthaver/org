@@ -6,9 +6,9 @@
 #+OPTIONS: ^:nil toc:nil num:nil html-postamble:nil html-preamble:nil
 Welcome to The Compiler Company (CC).
 
-- [[https://vc.compiler.company][vc]] :: source code
-- [[https://packy.compiler.company][packy]] :: packages
-- [[https://cdn.compiler.company][cdn]] :: assets
+#+comment: - [[https://vc.compiler.company][vc]] :: source code
+#+comment: - [[https://packy.compiler.company][packy]] :: packages
+#+comment: - [[https://cdn.compiler.company][cdn]] :: assets
 
 * [[file:meta/][meta]]
 :PROPERTIES:
@@ -30,8 +30,8 @@ Project and product documentation
 :ID:       6a08e4d7-982a-4dbb-a007-b58e96cbe2e9
 :END:
 Roadmap and tasks
-* [[file:notes/][notes]]
+* [[file:graph/][graph]]
 :PROPERTIES:
 :ID:       fbf365dd-0a36-4b0e-bfff-c8655eb80a51
 :END:
-CC notes
+CC graph
