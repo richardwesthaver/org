@@ -12,20 +12,6 @@
 ((upstream ()
            (delete-directories 
             '("/tmp/org/" "/tmp/graph/" "/tmp/meta/" "/tmp/plan/" "/tmp/blog/" "/tmp/docs/"))
-           (vc:hg-fast-export (sk-vc *skel-project*))
-           #$cd /tmp/org
-           git remote add cb ssh://git@codeberg.org/c-c/org
-           git remote add gh ssh://git@github.com/richardwesthaver/org
-           git checkout
-           git submodule add https://github.com/richardwesthaver/graph
-           git submodule add https://github.com/richardwesthaver/meta
-           git submodule add https://github.com/richardwesthaver/plan
-           git submodule add https://github.com/richardwesthaver/blog
-           git submodule add https://github.com/richardwesthaver/docs
-           git add .gitmodules
-           git commit -m 'gitmodules'
-           # git push -u cb default --force
-           git push gh default --force$#
            (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "graph/")))
            #$cd /tmp/graph
            git remote add cb ssh://git@codeberg.org/c-c/graph
@@ -54,5 +40,19 @@
            #$cd /tmp/blog
            git remote add cb ssh://git@codeberg.org/c-c/blog
            git remote add gh ssh://git@github.com/richardwesthaver/blog
+           # git push -u cb default --force
+           git push gh default --force$#
+           (vc:hg-fast-export (sk-vc *skel-project*))
+           #$cd /tmp/org
+           git remote add cb ssh://git@codeberg.org/c-c/org
+           git remote add gh ssh://git@github.com/richardwesthaver/org
+           git checkout
+           git submodule add https://github.com/richardwesthaver/graph
+           git submodule add https://github.com/richardwesthaver/meta
+           git submodule add https://github.com/richardwesthaver/plan
+           git submodule add https://github.com/richardwesthaver/blog
+           git submodule add https://github.com/richardwesthaver/docs
+           git add .gitmodules
+           git commit -m 'gitmodules'
            # git push -u cb default --force
            git push gh default --force$#))
