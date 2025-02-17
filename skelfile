@@ -63,4 +63,7 @@
            git add .gitmodules
            git commit -m 'gitmodules'
            # git push -u cb default --force
-           git push gh default --force$#))
+           git push gh default --force$#)
+ (dist ()
+       (:source ()
+                #$tar --exclude='*/.hg' --exclude='#*#' -I 'zstd' -cf org.tar.zst org$#)))
