@@ -9,7 +9,22 @@
          (cb (:git "ssh://git@codeberg.org/c-c/org"))
          (gh (:git "ssh://git@github.com/richardwesthaver/org")))
 :rules
-((upstream ()
+((build ()
+        (cli/ed:with-emacs (e)
+	  (org-babel-lob-ingest company-babel-file)
+          (cl-dolist (f (list \"graph/readme.org\" \"docs/readme.org\" 
+                              \"plan/readme.org\" \"meta/readme.org\"
+                              \"blog/readme.org\"))
+	             (org-with-file-buffer (join-paths company-org-directory f)
+			                   (org-babel-execute-buffer)
+			                   (save-buffer)))))
+ (publish ()
+          (cli/ed:with-emacs (e)
+	    (org-babel-lob-ingest company-babel-file)
+            (load-library \"publish\")
+            (publish t t t)))
+
+(upstream ()
            (delete-directories 
             '("/tmp/org/" "/tmp/graph/" "/tmp/meta/" "/tmp/plan/" 
               "/tmp/blog/" "/tmp/docs/" "/tmp/notes/"))
