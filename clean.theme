@@ -218,13 +218,13 @@
 #+HTML_HEAD:     line-height:  12px;
 #+HTML_HEAD:     padding:  4px 10px 4px 28px;
 #+HTML_HEAD: 
-#+HTML_HEAD:     -webkit-transition-duration:  400ms;
+#+HTML_HEAD:     -webkit-transition-duration:  80ms;
 #+HTML_HEAD:     -webkit-transition-property:  width, background;
 #+HTML_HEAD:     -webkit-transition-timing-function:  ease;
-#+HTML_HEAD:     -moz-transition-duration:  400ms;
+#+HTML_HEAD:     -moz-transition-duration:  80ms;
 #+HTML_HEAD:     -moz-transition-property:  width, background;
 #+HTML_HEAD:     -moz-transition-timing-function:  ease;
-#+HTML_HEAD:     -o-transition-duration:  400ms;
+#+HTML_HEAD:     -o-transition-duration:  80ms;
 #+HTML_HEAD:     -o-transition-property:  width, background;
 #+HTML_HEAD:     -o-transition-timing-function:  ease;
 #+HTML_HEAD: }
@@ -625,6 +625,9 @@
 #+HTML_HEAD:   padding-bottom: 1em;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
+#+HTML_HEAD: h1:target {
+#+HTML_HEAD:   color: #F0753C;
+#+HTML_HEAD: }
 #+HTML_HEAD:  </style>
 #+HTML_HEAD:<script type="text/javascript">
 # #+HTML_HEAD:  document.addEventListener('DOMContentLoaded',function() {
