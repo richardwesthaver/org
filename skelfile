@@ -6,78 +6,77 @@
 :description "CC Org Files"
 :tags ("org" "docs" "notes" "blog" "meta" "plan")
 :vc (:hg "https://vc.compiler.company/org"
-         (cb (:git "ssh://git@codeberg.org/c-c/org"))
-         (gh (:git "ssh://git@github.com/richardwesthaver/org")))
+     (cb (:git "ssh://git@codeberg.org/c-c/org"))
+     (gh (:git "ssh://git@github.com/richardwesthaver/org")))
 :rules
 ((build ()
-        (cli/ed:with-emacs (e)
-	  (org-babel-lob-ingest company-babel-file)
-          (cl-dolist (f (list \"graph/readme.org\" \"docs/readme.org\" 
-                              \"plan/readme.org\" \"meta/readme.org\"
-                              \"blog/readme.org\"))
-	             (org-with-file-buffer (join-paths company-org-directory f)
-			                   (org-babel-execute-buffer)
-			                   (save-buffer)))))
+  (cli/ed:with-emacs (e)
+   (org-babel-lob-ingest company-babel-file)
+   (cl-dolist (f (list \"graph/readme.org\" \"docs/readme.org\" 
+                  \"plan/readme.org\" \"meta/readme.org\"
+                  \"blog/readme.org\"))
+    (org-with-file-buffer (join-paths company-org-directory f)
+     (org-babel-execute-buffer)
+     (save-buffer)))))
  (publish ()
-          (cli/ed:with-emacs (e)
-	    (org-babel-lob-ingest company-babel-file)
-            (load-library \"publish\")
-            (publish t t t)))
-
-(upstream ()
-           (delete-directories 
-            '("/tmp/org/" "/tmp/graph/" "/tmp/meta/" "/tmp/plan/" 
-              "/tmp/blog/" "/tmp/docs/" "/tmp/notes/"))
-           (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "graph/")))
-           #$cd /tmp/graph
-           git remote add cb ssh://git@codeberg.org/c-c/graph
-           git remote add gh ssh://git@github.com/richardwesthaver/graph
-           git push -u cb default --force
-           git push gh default --force$#
-           (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "meta/")))
-           #$cd /tmp/meta
-           git remote add cb ssh://git@codeberg.org/c-c/meta
-           git remote add gh ssh://git@github.com/richardwesthaver/meta
-           git push -u cb default --force
-           git push gh default --force$#
-           (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "plan/")))
-           #$cd /tmp/plan
-           git remote add cb ssh://git@codeberg.org/c-c/plan
-           git remote add gh ssh://git@github.com/richardwesthaver/plan
-           git push -u cb default --force
-           git push gh default --force$#
-           (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "docs/")))
-           #$cd /tmp/docs
-           git remote add cb ssh://git@codeberg.org/c-c/docs
-           git remote add gh ssh://git@github.com/richardwesthaver/docs
-           git push -u cb default --force
-           git push gh default --force$#
-           (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "blog/")))
-           #$cd /tmp/blog
-           git remote add cb ssh://git@codeberg.org/c-c/blog
-           git remote add gh ssh://git@github.com/richardwesthaver/blog
-           git push -u cb default --force
-           git push gh default --force$#
-           (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "notes/")))
-           #$cd /tmp/notes
-           git remote add cb ssh://git@codeberg.org/c-c/notes
-           git remote add gh ssh://git@github.com/richardwesthaver/notes
-           git push -u cb default --force
-           git push gh default --force$#
-           (vc:hg-fast-export (sk-vc *skel-project*))
-           #$cd /tmp/org
-           git remote add cb ssh://git@codeberg.org/c-c/org
-           git remote add gh ssh://git@github.com/richardwesthaver/org
-           git checkout
-           git submodule add https://github.com/richardwesthaver/graph
-           git submodule add https://github.com/richardwesthaver/notes
-           git submodule add https://github.com/richardwesthaver/meta
-           git submodule add https://github.com/richardwesthaver/plan
-           git submodule add https://github.com/richardwesthaver/blog
-           git submodule add https://github.com/richardwesthaver/docs
-           git add .gitmodules
-           git commit -m 'gitmodules'
-           git push -u cb default --force
-           git push gh default --force$#)
+  (cli/ed:with-emacs (e)
+   (org-babel-lob-ingest company-babel-file)
+   (load-library \"publish\")
+   (publish t t t)))
+ (upstream ()
+  (delete-directories 
+   '("/tmp/org/" "/tmp/graph/" "/tmp/meta/" "/tmp/plan/" 
+     "/tmp/blog/" "/tmp/docs/" "/tmp/notes/"))
+  (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "graph/")))
+  #$cd /tmp/graph
+  git remote add cb ssh://git@codeberg.org/c-c/graph
+  git remote add gh ssh://git@github.com/richardwesthaver/graph
+  git push -u cb default --force
+  git push gh default --force$#
+  (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "meta/")))
+  #$cd /tmp/meta
+  git remote add cb ssh://git@codeberg.org/c-c/meta
+  git remote add gh ssh://git@github.com/richardwesthaver/meta
+  git push -u cb default --force
+  git push gh default --force$#
+  (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "plan/")))
+  #$cd /tmp/plan
+  git remote add cb ssh://git@codeberg.org/c-c/plan
+  git remote add gh ssh://git@github.com/richardwesthaver/plan
+  git push -u cb default --force
+  git push gh default --force$#
+  (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "docs/")))
+  #$cd /tmp/docs
+  git remote add cb ssh://git@codeberg.org/c-c/docs
+  git remote add gh ssh://git@github.com/richardwesthaver/docs
+  git push -u cb default --force
+  git push gh default --force$#
+  (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "blog/")))
+  #$cd /tmp/blog
+  git remote add cb ssh://git@codeberg.org/c-c/blog
+  git remote add gh ssh://git@github.com/richardwesthaver/blog
+  git push -u cb default --force
+  git push gh default --force$#
+  (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "notes/")))
+  #$cd /tmp/notes
+  git remote add cb ssh://git@codeberg.org/c-c/notes
+  git remote add gh ssh://git@github.com/richardwesthaver/notes
+  git push -u cb default --force
+  git push gh default --force$#
+  (vc:hg-fast-export (sk-vc *skel-project*))
+  #$cd /tmp/org
+  git remote add cb ssh://git@codeberg.org/c-c/org
+  git remote add gh ssh://git@github.com/richardwesthaver/org
+  git checkout
+  git submodule add https://github.com/richardwesthaver/graph
+  git submodule add https://github.com/richardwesthaver/notes
+  git submodule add https://github.com/richardwesthaver/meta
+  git submodule add https://github.com/richardwesthaver/plan
+  git submodule add https://github.com/richardwesthaver/blog
+  git submodule add https://github.com/richardwesthaver/docs
+  git add .gitmodules
+  git commit -m 'gitmodules'
+  git push -u cb default --force
+  git push gh default --force$#)
  (dist-source ()
-              #$cd .. && tar --exclude='*/.hg' --exclude='#*#' -I 'zstd' -cf org/org.tar.zst org/*$#))
+  #$cd .. && tar --exclude='*/.hg' --exclude='#*#' -I 'zstd' -cf org/org.tar.zst org/*$#))
