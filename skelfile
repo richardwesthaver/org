@@ -8,6 +8,11 @@
 :vc (:hg "https://vc.compiler.company/org"
      (cb (:git "ssh://git@codeberg.org/c-c/org"))
      (gh (:git "ssh://git@github.com/richardwesthaver/org")))
+:bind
+((org-deploy-ssh-key :env "~/.ssh/ellis_aws.pem")
+ (org-deploy-user :env "fedora")
+ (org-deploy-host :env "compiler.company")
+ (org-deploy-path :env "/srv/http/compiler.company/"))
 :rules
 ((build ()
   (cli/ed:with-emacs (e)
@@ -24,6 +29,9 @@
    (org-babel-lob-ingest company-babel-file)
    (load-library \"publish\")
    (publish* t)))
+ (deploy ()
+  #$scp -i $ORG_DEPLOY_SSH_KEY -r /tmp/www/* "$ORG_DEPLOY_USER@$ORG_DEPLOY_HOST:$ORG_DEPLOY_PATH"$#
+  (println :ok))
  (upstream ()
   (delete-directories 
    '("/tmp/org/" "/tmp/graph/" "/tmp/meta/" "/tmp/plan/" 
