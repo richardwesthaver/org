@@ -18,17 +18,17 @@
   (cli/ed:with-emacs (e)
    (org-babel-lob-ingest company-babel-file)
    (org-graph-init)
-   (cl-dolist (f (list \"graph/readme.org\" \"docs/readme.org\" 
-                  \"plan/readme.org\" \"meta/readme.org\"
-                  \"blog/readme.org\" \"notes/readme.org\"))
+   (cl-dolist (f (list "graph/readme.org" "docs/readme.org" 
+                  "plan/readme.org" "meta/readme.org"
+                  "blog/readme.org" "notes/readme.org"))
     (org-with-file-buffer (join-paths company-org-directory f)
      (org-babel-execute-buffer)
      (save-buffer)))))
  (publish ()
   (cli/ed:with-emacs (e)
    (org-babel-lob-ingest company-babel-file)
-   (load-library \"publish\")
-   (publish* t)))
+   (load-library "publish")
+   (publish t t)))
  (deploy ()
   #$scp -i $ORG_DEPLOY_SSH_KEY -r /tmp/www/* "$ORG_DEPLOY_USER@$ORG_DEPLOY_HOST:$ORG_DEPLOY_PATH"$#
   (println :ok))
