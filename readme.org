@@ -7,7 +7,9 @@
 Welcome to The Compiler Company (CC).
 #+comment: - [[https://vc.compiler.company][vc]] :: source code
 #+comment: - [[https://packy.compiler.company][packy]] :: packages
-- [[https://cdn.compiler.company][cdn]] :: assets
+- [[https://cdn.compiler.company][cdn]]
+- [[https://packy.compiler.company][packy]]
+- [[gh:richardwesthaver][github]] / [[cb:c-c][codeberg]]
 * [[file:meta/][meta]]
 :PROPERTIES:
 :ID:       db2f6d7e-068c-401d-9cf6-a8bb9fad5ef1
