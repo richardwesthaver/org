@@ -4,7 +4,7 @@
 :version "0.1.0"
 :license "MPL"
 :description "CC Org Files"
-:tags ("org" "docs" "notes" "blog" "meta" "plan")
+:tags ("org" "docs" "notes" "blog" "meta" "plan" "archive" "notes" "graph")
 :vc (:hg "https://vc.compiler.company/org"
      (cb (:git "ssh://git@codeberg.org/c-c/org"))
      (gh (:git "ssh://git@github.com/richardwesthaver/org")))
@@ -20,7 +20,8 @@
    (org-graph-init)
    (cl-dolist (f (list "graph/readme.org" "docs/readme.org" 
                   "plan/readme.org" "meta/readme.org"
-                  "blog/readme.org" "notes/readme.org"))
+                  "blog/readme.org" "notes/readme.org"
+                  "archive/readme.org"))
     (org-with-file-buffer (join-paths company-org-directory f)
      (org-babel-execute-buffer)
      (save-buffer)))))
