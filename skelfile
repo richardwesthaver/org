@@ -89,5 +89,13 @@
   git commit -m 'gitmodules'
   git push -u cb default --force
   git push gh default --force$#)
+ (dist-repos ()
+  (vc:vc-bundle (sk-vc *skel-project*) "/opt/store/packy/vc/org.hg")
+  (mapc
+   (lambda (x)
+    (vc:vc-bundle
+     (vc:make-repo (probe-file (directory-path x)))
+     (merge-pathnames (format nil "vc/~A.hg" x) "/opt/store/packy/")))
+   '("graph" "plan" "docs" "blog" "meta" "notes" "archive")))
  (dist-source ()
   #$cd .. && tar --exclude='*/.hg' --exclude='#*#' -I 'zstd' -cf org/org.tar.zst org/*$#))
