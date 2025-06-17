@@ -98,4 +98,5 @@
      (merge-pathnames (format nil "vc/~A.hg" x) "/opt/store/packy/")))
    '("graph" "plan" "docs" "blog" "meta" "notes" "archive")))
  (dist-source ()
-  #$cd .. && tar --exclude='*/.hg' --exclude='#*#' -I 'zstd' -cf org/org.tar.zst org/*$#))
+  (with-directory ".."
+   #$tar --exclude='*/.hg' --exclude='#*#' -I 'zstd' -cf org/org.tar.zst org/*$#)))
