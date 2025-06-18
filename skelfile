@@ -16,7 +16,7 @@
  (org-deploy-path :env "/srv/http/compiler.company/"))
 :rules
 ((build ()
-  (cli/ed:with-emacs (e)
+  (with-emacs (e)
    (org-babel-lob-ingest company-babel-file)
    (org-graph-init)
    (cl-dolist (f (list "graph/readme.org" "docs/readme.org" 
@@ -35,60 +35,31 @@
   #$scp -i $ORG_DEPLOY_SSH_KEY -r /tmp/www/* "$ORG_DEPLOY_USER@$ORG_DEPLOY_HOST:$ORG_DEPLOY_PATH"$#
   (println :ok))
  (upstream ()
-  (delete-directories 
-   '("/tmp/org/" "/tmp/graph/" "/tmp/meta/" "/tmp/plan/" 
-     "/tmp/blog/" "/tmp/docs/" "/tmp/notes/"))
-  (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "graph/")))
-  #$cd /tmp/graph
-  git remote add cb ssh://git@codeberg.org/c-c/graph
-  git remote add gh ssh://git@github.com/richardwesthaver/graph
-  git push -u cb default --force
-  git push gh default --force$#
-  (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "meta/")))
-  #$cd /tmp/meta
-  git remote add cb ssh://git@codeberg.org/c-c/meta
-  git remote add gh ssh://git@github.com/richardwesthaver/meta
-  git push -u cb default --force
-  git push gh default --force$#
-  (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "plan/")))
-  #$cd /tmp/plan
-  git remote add cb ssh://git@codeberg.org/c-c/plan
-  git remote add gh ssh://git@github.com/richardwesthaver/plan
-  git push -u cb default --force
-  git push gh default --force$#
-  (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "docs/")))
-  #$cd /tmp/docs
-  git remote add cb ssh://git@codeberg.org/c-c/docs
-  git remote add gh ssh://git@github.com/richardwesthaver/docs
-  git push -u cb default --force
-  git push gh default --force$#
-  (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "blog/")))
-  #$cd /tmp/blog
-  git remote add cb ssh://git@codeberg.org/c-c/blog
-  git remote add gh ssh://git@github.com/richardwesthaver/blog
-  git push -u cb default --force
-  git push gh default --force$#
-  (vc:hg-fast-export (make-instance 'vc:hg-repo :path (probe-file "notes/")))
-  #$cd /tmp/notes
-  git remote add cb ssh://git@codeberg.org/c-c/notes
-  git remote add gh ssh://git@github.com/richardwesthaver/notes
-  git push -u cb default --force
-  git push gh default --force$#
-  (vc:hg-fast-export (sk-vc *skel-project*))
-  #$cd /tmp/org
-  git remote add cb ssh://git@codeberg.org/c-c/org
-  git remote add gh ssh://git@github.com/richardwesthaver/org
-  git checkout
-  git submodule add https://github.com/richardwesthaver/graph
-  git submodule add https://github.com/richardwesthaver/notes
-  git submodule add https://github.com/richardwesthaver/meta
-  git submodule add https://github.com/richardwesthaver/plan
-  git submodule add https://github.com/richardwesthaver/blog
-  git submodule add https://github.com/richardwesthaver/docs
-  git add .gitmodules
-  git commit -m 'gitmodules'
-  git push -u cb default --force
-  git push gh default --force$#)
+  (labels ((bump (name)
+            (let ((path (directory-path (merge-pathnames name "/tmp/"))))
+             (delete-directory path)
+             (vc-export (make-instance 'vc:hg-repo :path (if (equal name "org") 
+                                                          (current-directory) 
+                                                          (probe-directory name))))
+             (with-repo (r :path tmp :type :git)
+              (vc-remote r :add :name "cb" :url (format nil "ssh://git@codeberg.org/c-c/~A" name))
+              (vc-remote r :add :name "gh" :url (format nil "ssh://git@github.com/richardwesthaver/~A" name))
+              (when (equal name "org")
+               (vc-update r)
+               (vc:vc-submodule r :add :url "https://github.com/richardwesthaver/graph")
+               (vc:vc-submodule r :add :url "https://github.com/richardwesthaver/notes")
+               (vc:vc-submodule r :add :url "https://github.com/richardwesthaver/meta")
+               (vc:vc-submodule r :add :url "https://github.com/richardwesthaver/plan")
+               (vc:vc-submodule r :add :url "https://github.com/richardwesthaver/blog")
+               (vc:vc-submodule r :add :url "https://github.com/richardwesthaver/docs")
+               (vc:vc-add r ".gitmodules")
+               (vc:vc-commit r "gitmodules"))
+              (vc-push r :set-upstream t :remote "cb" :branch "default" :force t)
+              (vc-push r :remote "gh" :branch "default" :force t))))
+           (bump* (&rest subrepos)
+            (dolist (s subrepos)
+             (bump s))))
+   (bump* "graph" "meta" "plan" "docs" "blog" "notes" "org")))
  (dist-repos ()
   (vc:vc-bundle (sk-vc *skel-project*) "/opt/store/packy/vc/org.hg")
   (mapc
