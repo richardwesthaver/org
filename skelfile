@@ -27,7 +27,7 @@
      (org-babel-execute-buffer)
      (save-buffer)))))
  (publish ()
-  (cli/ed:with-emacs (e)
+  (with-emacs (e)
    (org-babel-lob-ingest company-babel-file)
    (load-library "publish")
    (publish t t)))
@@ -37,7 +37,7 @@
  (upstream ()
   (labels ((bump (name)
             (let ((path (directory-path (merge-pathnames name "/tmp/"))))
-             (delete-directory path :recursive t)
+             (probe-delete-directory path :recursive t)
              (vc-export 
               (make-instance 'vc:hg-repo 
                :path (if (equal name "org") 

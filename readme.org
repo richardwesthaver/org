@@ -6,35 +6,35 @@
 #+OPTIONS: ^:nil toc:nil num:nil html-postamble:nil html-preamble:nil
 Welcome to The Compiler Company (CC).
 #+comment: - [[https://vc.compiler.company][vc]] :: source code
-#+comment: - [[https://packy.compiler.company][packy]] :: packages
 - [[https://cdn.compiler.company][cdn]]
 - [[https://packy.compiler.company][packy]]
 - [[gh:richardwesthaver][github]] / [[cb:c-c][codeberg]]
-* [[file:meta/][meta]]
+* [[file:graph/][graph]]
 :PROPERTIES:
-:ID:       db2f6d7e-068c-401d-9cf6-a8bb9fad5ef1
+:ID:       fbf365dd-0a36-4b0e-bfff-c8655eb80a51
 :END:
-internal documentation
+Information Graph
 * [[file:docs/][docs]] 
 :PROPERTIES:
 :ID:       64f2e1c6-d1af-44b0-85e4-dc1f85201f82
 :END:
+Project Documentation
 * [[file:plan/][plan]]
 :PROPERTIES:
 :ID:       6a08e4d7-982a-4dbb-a007-b58e96cbe2e9
 :END:
 Roadmap and tasks
 
-* [[file:graph/][graph]]
-:PROPERTIES:
-:ID:       fbf365dd-0a36-4b0e-bfff-c8655eb80a51
-:END:
-
 * [[file:blog/][blog]]
 :PROPERTIES:
 :ID:       bdaf5213-bbff-4a67-9a36-bd0af4bff4c3
 :END:
 
+* [[file:meta/][meta]]
+:PROPERTIES:
+:ID:       db2f6d7e-068c-401d-9cf6-a8bb9fad5ef1
+:END:
+internal documentation
 * [[file:notes/][notes]]
 :PROPERTIES:
 :ID:       f6c101d5-e829-4567-ac18-d35cf0c39b0d
