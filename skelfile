@@ -39,7 +39,7 @@
             (let ((path (directory-path (merge-pathnames name "/tmp/"))))
              (probe-delete-directory path :recursive t)
              (vc-export 
-              (make-instance 'vc:hg-repo 
+              (make-instance 'hg-repo 
                :path (if (equal name "org") 
                       (current-directory) 
                       (probe-directory name)))
@@ -49,14 +49,14 @@
               (vc-remote r :add :name "gh" :url (format nil "ssh://git@github.com/richardwesthaver/~A" name))
               (when (equal name "org")
                (vc-update r)
-               (vc:vc-submodule r :add :url "https://github.com/richardwesthaver/graph")
-               (vc:vc-submodule r :add :url "https://github.com/richardwesthaver/notes")
-               (vc:vc-submodule r :add :url "https://github.com/richardwesthaver/meta")
-               (vc:vc-submodule r :add :url "https://github.com/richardwesthaver/plan")
-               (vc:vc-submodule r :add :url "https://github.com/richardwesthaver/blog")
-               (vc:vc-submodule r :add :url "https://github.com/richardwesthaver/docs")
-               (vc:vc-add r ".gitmodules")
-               (vc:vc-commit r "gitmodules"))
+               (vc-submodule r :add :url "https://github.com/richardwesthaver/graph")
+               (vc-submodule r :add :url "https://github.com/richardwesthaver/notes")
+               (vc-submodule r :add :url "https://github.com/richardwesthaver/meta")
+               (vc-submodule r :add :url "https://github.com/richardwesthaver/plan")
+               (vc-submodule r :add :url "https://github.com/richardwesthaver/blog")
+               (vc-submodule r :add :url "https://github.com/richardwesthaver/docs")
+               (vc-add r ".gitmodules")
+               (vcvc-commit r "gitmodules"))
               (vc-push r :set-upstream t :remote "cb" :branch "default" :force t)
               (vc-push r :remote "gh" :branch "default" :force t))))
            (bump* (&rest subrepos)
@@ -64,11 +64,11 @@
              (bump s))))
    (bump* "graph" "meta" "plan" "docs" "blog" "notes" "org")))
  (dist-repos ()
-  (vc:vc-bundle (sk-vc *skel-project*) "/opt/store/packy/vc/org.hg")
+  (vc-bundle (sk-vc *skel-project*) "/opt/store/packy/vc/org.hg")
   (mapc
    (lambda (x)
-    (vc:vc-bundle
-     (vc:make-repo (probe-file (directory-path x)))
+    (vc-bundle
+     (make-repo (probe-file (directory-path x)))
      (merge-pathnames (format nil "vc/~A.hg" x) "/opt/store/packy/")))
    '("graph" "plan" "docs" "blog" "meta" "notes" "archive")))
  (dist-source ()
