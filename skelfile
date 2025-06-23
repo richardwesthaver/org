@@ -56,7 +56,7 @@
                (vc-submodule r :add :url "https://github.com/richardwesthaver/blog")
                (vc-submodule r :add :url "https://github.com/richardwesthaver/docs")
                (vc-add r ".gitmodules")
-               (vcvc-commit r "gitmodules"))
+               (vc-commit r "gitmodules"))
               (vc-push r :set-upstream t :remote "cb" :branch "default" :force t)
               (vc-push r :remote "gh" :branch "default" :force t))))
            (bump* (&rest subrepos)
