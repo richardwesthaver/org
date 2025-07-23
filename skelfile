@@ -24,9 +24,10 @@
                    "blog/readme.org" "notes/readme.org"
                    "archive/readme.org"
                    ,@(directory-files "docs/core/" t ".*[.]org")
-                   ,@(directory-files "docs/core/lib/" t ".*[.]org")
-                   ,@(directory-files "docs/core/app/" t ".*[.]org")
-                   ,@(directory-files "docs/infra/" t ".*[.]org")))
+                   ;; ,@(directory-files "docs/core/lib/" t ".*[.]org")
+                   ;; ,@(directory-files "docs/core/app/" t ".*[.]org")
+                   ;; ,@(directory-files "docs/infra/" t ".*[.]org")
+                   ))
     (print f)
     (org-with-file-buffer f
      (org-babel-execute-buffer)
