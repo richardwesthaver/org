@@ -19,19 +19,14 @@
   (with-emacs (e)
    (org-babel-lob-ingest company-babel-file)
    (org-graph-init)
-   (cl-dolist (f `("graph/readme.org" "docs/readme.org" 
-                   "plan/readme.org" "meta/readme.org"
-                   "blog/readme.org" "notes/readme.org"
-                   "archive/readme.org"
-                   ,@(directory-files "docs/core/" t ".*[.]org")
-                   ;; ,@(directory-files "docs/core/lib/" t ".*[.]org")
-                   ;; ,@(directory-files "docs/core/app/" t ".*[.]org")
-                   ;; ,@(directory-files "docs/infra/" t ".*[.]org")
-                   ))
-    (print f)
-    (org-with-file-buffer f
-     (org-babel-execute-buffer)
-     (save-buffer)))))
+   (mapc 
+    (lambda (f)
+     (org-with-file-buffer f
+      (org-babel-execute-buffer)
+      (save-buffer)))
+    (flatten
+     (mapcar (lambda (x) (directory-files-recursively x "\\(readme\\|index\\)[.]org$"))
+      (list "docs" "graph" "plan" "blog" "docs" "notes" "archive"))))))
  (publish ()
   (with-emacs (e)
    (org-babel-lob-ingest company-babel-file)
