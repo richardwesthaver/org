@@ -25,22 +25,24 @@
 
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/css/htmlize.css" />
 #+HTML_HEAD: <style type="text/css">
+
 #+HTML_HEAD: html {
 #+HTML_HEAD:     scroll-padding-top: 2em;
 #+HTML_HEAD: }
+
 #+HTML_HEAD: body {
 #+HTML_HEAD:     font-family:  "CommitMono", monospace;
-#+HTML_HEAD:     -webkit-font-smoothing: antialiased;
-#+HTML_HEAD:     -moz-osx-font-smoothing: grayscale;
-#+HTML_HEAD:     font-feature-settings: "ss01", "ss03", "ss04", "ss05";
 #+HTML_HEAD:     color:  #EFFAF9;
 #+HTML_HEAD:     background-color: #0C0F0A;
 #+HTML_HEAD: }
 
+#+HTML_HEAD: div.content {
+#+HTML_HEAD:    display: grid;
+#+HTML_HEAD:    justify-content: center;
+#+HTML_HEAD: }
+
 #+HTML_HEAD: div.status {
-#+HTML_HEAD:     position: fixed;
-# #+HTML_HEAD:     margin: 0.2em;
-#+HTML_HEAD:     text-align: center;
+#+HTML_HEAD:     position: relative;
 #+HTML_HEAD: }
 
 #+HTML_HEAD: h1, h2, h3, h4, h5, h6 {
@@ -80,6 +82,7 @@
 #+HTML_HEAD: code, pre {
 #+HTML_HEAD:     font-family:  "3270", monospace;
 #+HTML_HEAD:     overflow: overlay;
+#+HTML_HEAD:     max-width: fit-content;
 #+HTML_HEAD: }
 #+HTML_HEAD: code {
 #+HTML_HEAD:   font-family:  monospace;
@@ -93,10 +96,13 @@
 #+HTML_HEAD: .src {
 #+HTML_HEAD:   font-family: monospace;
 #+HTML_HEAD: }
-#+HTML_HEAD: p::after{
-#+HTML_HEAD:     content: "\a\a";
-#+HTML_HEAD:     white-space: pre;
+#+HTML_HEAD: p {
+#+HTML_HEAD:   white-space: pre-line;
 #+HTML_HEAD: }
+# #+HTML_HEAD: p::after{
+# #+HTML_HEAD:     content: "\a\a";
+# #+HTML_HEAD:     white-space: pre;
+# #+HTML_HEAD: }
 #+HTML_HEAD: pre {
 #+HTML_HEAD:     font-family:  monospace;
 #+HTML_HEAD:     display:  block;
@@ -113,6 +119,7 @@
 #+HTML_HEAD:     margin:  0 30px 20px -22.5px;
 #+HTML_HEAD:     color:  #AAD3F8;
 #+HTML_HEAD:     border-left:  8px solid #B08889;
+#+HTML_HEAD:     max-width: fit-content;
 #+HTML_HEAD: }
 
 #+HTML_HEAD: pre.example {
@@ -151,15 +158,12 @@
 #+HTML_HEAD:     background-color: #222222;
 #+HTML_HEAD: }
 #+HTML_HEAD: table {
-#+HTML_HEAD:     line-height:  1.8;
-#+HTML_HEAD:     margin-bottom:  15px;
+#+HTML_HEAD:     margin-bottom:  4px;
 #+HTML_HEAD:     max-width:  100%;
-#+HTML_HEAD:     width:  100%;
-#+HTML_HEAD:     border: 1px solid lightsteelblue;
-#+HTML_HEAD:     border-style: inset;
+#+HTML_HEAD:     border-style: outset;
 #+HTML_HEAD: }
 #+HTML_HEAD: table td, table th {
-#+HTML_HEAD:     padding:  0 15px;
+#+HTML_HEAD:     padding:  0 4px;
 #+HTML_HEAD: }
 #+HTML_HEAD: table th.left, table td.left {
 #+HTML_HEAD:     text-align:  left;
@@ -167,15 +171,9 @@
 #+HTML_HEAD: table th.right, table td.right {
 #+HTML_HEAD:     text-align:  right;
 #+HTML_HEAD: }
-#+HTML_HEAD: td, th {
-#+HTML_HEAD:   border: 1px solid lightsteelblue;
-#+HTML_HEAD:   border-style: outset;
-#+HTML_HEAD: }
-
 #+HTML_HEAD: /* body */
 #+HTML_HEAD: body {
 #+HTML_HEAD:     margin:  auto auto;
-# #+HTML_HEAD:     max-width:  98%;
 #+HTML_HEAD: }
 #+HTML_HEAD: /* head */
 #+HTML_HEAD: .masthead {
@@ -184,7 +182,6 @@
 #+HTML_HEAD: .masthead: after {
 #+HTML_HEAD:     display:  block;
 #+HTML_HEAD:     content:  '----------------------------------------------------------------';
-# #+HTML_HEAD:     margin:  10px 0;
 #+HTML_HEAD:     color:  #EDF060;
 #+HTML_HEAD: }
 #+HTML_HEAD: .masthead a {
