@@ -89,20 +89,12 @@
 #+HTML_HEAD:   color:  #EDF060;
 #+HTML_HEAD:   background-color:  #303330;
 #+HTML_HEAD: }
-# #+HTML_HEAD: code:before, code:after {
-# #+HTML_HEAD:     content:  "=";
-# #+HTML_HEAD:     color:  #DDCAD9;
-# #+HTML_HEAD: }
 #+HTML_HEAD: .src {
 #+HTML_HEAD:   font-family: monospace;
 #+HTML_HEAD: }
 #+HTML_HEAD: p {
 #+HTML_HEAD:   white-space: pre-line;
 #+HTML_HEAD: }
-# #+HTML_HEAD: p::after{
-# #+HTML_HEAD:     content: "\a\a";
-# #+HTML_HEAD:     white-space: pre;
-# #+HTML_HEAD: }
 #+HTML_HEAD: pre {
 #+HTML_HEAD:     font-family:  monospace;
 #+HTML_HEAD:     display:  block;
@@ -110,8 +102,6 @@
 #+HTML_HEAD:     padding:  15px;
 #+HTML_HEAD:     border-radius:  3px 3px 3px 3px;
 #+HTML_HEAD:     background-color:  #303030;
-# #+HTML_HEAD:     word-break:  break-all;
-# #+HTML_HEAD:     word-wrap:  break-word;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
 #+HTML_HEAD: blockquote {
@@ -373,7 +363,6 @@
 #+HTML_HEAD: #table-of-contents: hover #text-table-of-contents {
 #+HTML_HEAD:     display:  block;
 #+HTML_HEAD:     padding:  0.5em;
-# #+HTML_HEAD:     margin-top:  -1.5em;
 #+HTML_HEAD: }
 
 #+HTML_HEAD: /* footer */
