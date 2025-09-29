@@ -5,9 +5,6 @@
 #+export_file_name: index
 #+OPTIONS: ^:nil toc:nil num:nil html-postamble:nil html-preamble:nil
 Welcome to The Compiler Company (CC).
-- [[https://vc.compiler.company][vc]]
-- [[https://cdn.compiler.company][cdn]]
-- [[https://packy.compiler.company][packy]]
 - [[gh:richardwesthaver][github]] / [[cb:c-c][codeberg]]
 * [[file:graph/][graph]]
 :PROPERTIES:

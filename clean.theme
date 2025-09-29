@@ -4,7 +4,7 @@
 #+DATE: {{{modification-time("%F %r", t)}}}
 #+OPTIONS: org-html-head-include-default-style:t ^:nil _:nil email:t \n:nil Tex:t LaTeX:t broken-links:mark toc:t
 #+HTML_DOCTYPE: html5
-#+HTML_LINK_HOME: https://compiler.company
+#+HTML_LINK_HOME: https://otom8.dev
 #+HTML_LINK_UP: ./
 #+LATEX_HEADER: \usepackage{placeins}
 #+LATEX_HEADER: \usepackage{parskip}
@@ -16,14 +16,14 @@
 #+LATEX_HEADER: \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 #+LATEX_HEADER: \hypersetup{colorlinks, citecolor=red,filecolor=magenta,linkcolor=magenta,urlcolor=magenta}
 
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/font/commit-mono.css" />
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/font/3270.css" />
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/font/pragmata-pro.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.otom8.dev/font/commit-mono.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.otom8.dev/font/3270.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.otom8.dev/font/pragmata-pro.css" />
 
-#+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.compiler.company/js/jquery.min.js"></script>
-#+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.compiler.company/js/esquemadorg.js"></script>
+#+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.otom8.dev/js/jquery.min.js"></script>
+#+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.otom8.dev/js/esquemadorg.js"></script>
 
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/css/htmlize.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.otom8.dev/css/htmlize.css" />
 #+HTML_HEAD: <style type="text/css">
 
 #+HTML_HEAD: html {
@@ -294,20 +294,6 @@
 #+HTML_HEAD:     color:  #EDF060;
 #+HTML_HEAD: }
 #+HTML_HEAD: 
-#+HTML_HEAD: /* nav */
-#+HTML_HEAD: div #nav {
-#+HTML_HEAD:   z-index: 10;
-#+HTML_HEAD:   top:  0.2em;
-#+HTML_HEAD:   left: 0.2em;
-#+HTML_HEAD:   text-align: left;
-#+HTML_HEAD:   font-size: 1.2rem;
-#+HTML_HEAD:   cursor: pointer;
-#+HTML_HEAD:   position: fixed;
-#+HTML_HEAD: }
-
-#+HTML_HEAD: div #nav h2 {
-#+HTML_HEAD:   margin: 0em;
-#+HTML_HEAD: }
 
 #+HTML_HEAD: #index {
 #+HTML_HEAD:   display: block;
@@ -323,12 +309,14 @@
 #+HTML_HEAD:   text-align:  left;
 #+HTML_HEAD:   backdrop-filter: blur(6px);
 #+HTML_HEAD: }
+
 #+HTML_HEAD: #org-div-home-and-up {
 #+HTML_HEAD:   display: inline-flex;
 #+HTML_HEAD:   position: sticky;
 #+HTML_HEAD:   top: 0;
 #+HTML_HEAD:   overflow: hidden;
 #+HTML_HEAD: }
+
 #+HTML_HEAD: button {
 #+HTML_HEAD:   border: none;
 #+HTML_HEAD:   background-color: black;
@@ -336,64 +324,58 @@
 #+HTML_HEAD:   font-size: 16px;
 #+HTML_HEAD:   cursor: pointer;
 #+HTML_HEAD: }
+
 #+HTML_HEAD: button:hover {background: #3F3F37; color:#EDF060;}
 #+HTML_HEAD: .show {float:right;}
 #+HTML_HEAD: .hide {float:right;}
 #+HTML_HEAD: .home {float:left; font-size:24px;}
 #+HTML_HEAD: .up {float:left; font-size:24px;}
-# #+HTML_HEAD: /* table of content */
-# #+HTML_HEAD: nav, #table-of-contents {
-# #+HTML_HEAD:   cursor: pointer;
-# #+HTML_HEAD:     position:  fixed;
-# #+HTML_HEAD:     right:  0.2em;
-# #+HTML_HEAD:     top:  0.2em;
-# #+HTML_HEAD:     border: 1px solid #e1e1e8;
-# #+HTML_HEAD:     -webkit-box-shadow:  0 0 1em #777777;
-# #+HTML_HEAD:     -moz-box-shadow:  0 0 1em #777777;
-# #+HTML_HEAD:     -webkit-border-bottom-left-radius:  5px;
-# #+HTML_HEAD:     -moz-border-radius-bottomleft:  5px;
-# #+HTML_HEAD:     text-align:  right;
-# #+HTML_HEAD:     /* ensure doesn't flow off the screen when expanded */
-# #+HTML_HEAD:     height:  auto;
-# #+HTML_HEAD:     overflow-y: scroll;
-# #+HTML_HEAD:     z-index:  11;
-# #+HTML_HEAD: }
-# #+HTML_HEAD: 
-# #+HTML_HEAD: #table-of-contents h2 {
-# #+HTML_HEAD:   margin: 0em;
-# #+HTML_HEAD:   font-size: 48px;
-# #+HTML_HEAD:   font-stretch: ultra-expanded;
-# #+HTML_HEAD: }
-#+HTML_HEAD: 
-# #+HTML_HEAD: #table-of-contents ul {
-# #+HTML_HEAD:   margin-left:  14pt;
-# #+HTML_HEAD:   margin-bottom:  10pt;
-# #+HTML_HEAD:   padding:  0
-# #+HTML_HEAD: }
-#+HTML_HEAD: 
-# #+HTML_HEAD: #table-of-contents li {
-# #+HTML_HEAD:     padding:  0;
-# #+HTML_HEAD:     margin:  1px;
-# #+HTML_HEAD:     list-style:  none;
-# #+HTML_HEAD: }
 
-# #+HTML_HEAD: #table-of-contents li a {
-# #+HTML_HEAD:     font-size:  16px;
-# #+HTML_HEAD: }
-# #+HTML_HEAD: 
-# #+HTML_HEAD: #table-of-contents #text-table-of-contents {
-# #+HTML_HEAD:   backdrop-filter: blur(6px);
-# #+HTML_HEAD:   display:  none;
-# #+HTML_HEAD:   text-align:  left;
-# #+HTML_HEAD:   padding-right: 0.1em;
-# #+HTML_HEAD: }
-# #+HTML_HEAD: 
-# #+HTML_HEAD: #table-of-contents: hover #text-table-of-contents {
-# #+HTML_HEAD:     display:  block;
-# #+HTML_HEAD:     padding:  0.5em;
+#+HTML_HEAD: /* table of content */
+#+HTML_HEAD: #table-of-contents {
+#+HTML_HEAD:   cursor: pointer;
+#+HTML_HEAD:   z-index:  11;
+#+HTML_HEAD:   position: fixed;
+#+HTML_HEAD:   overflow: hidden;
+#+HTML_HEAD: }
+
+#+HTML_HEAD: #table-of-contents h2 {
+#+HTML_HEAD:   color: palevioletred;
+#+HTML_HEAD:   visibility: visible;
+#+HTML_HEAD: }
+#+HTML_HEAD: #orgjq-contracted h2 {
+#+HTML_HEAD:   visibility: hidden;
+#+HTML_HEAD: }
+
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents ul {
+#+HTML_HEAD:   margin-left:  14pt;
+#+HTML_HEAD:   margin-bottom:  10pt;
+#+HTML_HEAD:   padding:  0
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents li {
+#+HTML_HEAD:     padding:  0;
+#+HTML_HEAD:     margin:  1px;
+#+HTML_HEAD:     list-style:  none;
+#+HTML_HEAD: }
+
+#+HTML_HEAD: #table-of-contents li a {
+#+HTML_HEAD:     font-size:  16px;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents #text-table-of-contents {
+#+HTML_HEAD:   backdrop-filter: blur(6px);
+#+HTML_HEAD:   display:  none;
+#+HTML_HEAD:   padding-right: 0.1em;
+#+HTML_HEAD: }
+#+HTML_HEAD: 
+#+HTML_HEAD: #table-of-contents: hover #text-table-of-contents {
+#+HTML_HEAD:     display:  block;
+#+HTML_HEAD:     padding:  0.5em;
 # #+HTML_HEAD:     margin-top:  -1.5em;
-# #+HTML_HEAD: }
-# #+HTML_HEAD: 
+#+HTML_HEAD: }
+
 #+HTML_HEAD: /* footer */
 #+HTML_HEAD: .footer {
 #+HTML_HEAD:     margin:  80px 0 0;
@@ -410,7 +392,7 @@
 #+HTML_HEAD: .footpara {
 #+HTML_HEAD:     display:  inline;
 #+HTML_HEAD: }
-#+HTML_HEAD: 
+
 #+HTML_HEAD: /* Responsive
 #+HTML_HEAD:    -------------------------------------------------- */
 #+HTML_HEAD: 
@@ -447,13 +429,6 @@
 #+HTML_HEAD:   text-align: center;
 #+HTML_HEAD: }
 #+HTML_HEAD:
-#+HTML_HEAD: .outline-2, .outline-3, .outline-4, .outline-5 {
-# #+HTML_HEAD:   padding-left: 1em;
-#+HTML_HEAD: }
-
-# #+HTML_HEAD: .outline-2 {
-# #+HTML_HEAD:   padding-top: 1.8em;
-# #+HTML_HEAD: }
 
 #+HTML_HEAD: .org-dl dt {
 #+HTML_HEAD:   font-weight: bold;
@@ -465,7 +440,6 @@
 
 #+HTML_HEAD: .title {
 #+HTML_HEAD:   text-align: center;
-# #+HTML_HEAD:   padding-top: 1.8em;
 #+HTML_HEAD: }
 
 #+HTML_HEAD: div#postamble.status {
@@ -627,18 +601,18 @@
 #+HTML_HEAD: }
 #+HTML_HEAD:  </style>
 #+HTML_HEAD:<script type="text/javascript">
-# #+HTML_HEAD:  document.addEventListener('DOMContentLoaded',function() {
-# #+HTML_HEAD:      document.getElementById("table-of-contents").onclick = function() {
-# #+HTML_HEAD:          var elem = document.getElementById("text-table-of-contents");
-# #+HTML_HEAD:          elem.style.display = elem.style.display == "block" ? "none" : "block";
-# #+HTML_HEAD:      }
-# #+HTML_HEAD:  });
-# #+HTML_HEAD:  document.addEventListener('DOMContentLoaded',function() {
-# #+HTML_HEAD:      document.getElementById("nav").onclick = function() {
-# #+HTML_HEAD:          var elem = document.getElementById("text-index");
-# #+HTML_HEAD:          elem.style.display = elem.style.display == "block" ? "none" : "block";
-# #+HTML_HEAD:      }
-# #+HTML_HEAD:  });
+#+HTML_HEAD:  document.addEventListener('DOMContentLoaded',function() {
+#+HTML_HEAD:      document.getElementById("table-of-contents").onclick = function() {
+#+HTML_HEAD:          var elem = document.getElementById("text-table-of-contents");
+#+HTML_HEAD:          elem.style.display = elem.style.display == "block" ? "none" : "block";
+#+HTML_HEAD:      }
+#+HTML_HEAD:  });
+#+HTML_HEAD:  document.addEventListener('DOMContentLoaded',function() {
+#+HTML_HEAD:      document.getElementById("nav").onclick = function() {
+#+HTML_HEAD:          var elem = document.getElementById("text-index");
+#+HTML_HEAD:          elem.style.display = elem.style.display == "block" ? "none" : "block";
+#+HTML_HEAD:      }
+#+HTML_HEAD:  });
 #+HTML_HEAD:
 #+HTML_HEAD:  var url = document.location.href;
 #+HTML_HEAD:  var orgsource = url.substring(0, url.lastIndexOf("."))+".org";
