@@ -4,7 +4,7 @@
 
 ;;; Code:
 (body :font-family  #("CommitMono" monospace) :color "#EFFAF9" :background-color "#0C0F0A")
-(div.content :justify-content center)
+(div.content :display grid)
 (div.status :position relative)
 ("h1, h2, h3, h4, h5, h6" :position relative :font-weight bold :color cornsilk :text-rendering  optimizeLegibility)
 ("i, em, b, strong" :padding-left (em .1) :padding-right (em .1))
@@ -25,8 +25,6 @@
 (code :font-family monospace :color "#EDF060" :background-color "#303330")
 ("code:before, code:after" :content "=" :color "#DDCAD9")
 (.src :font-family monospace)
-(p :white-space pre-line)
-("p::after" :content "\a\a" :white-space pre)
 (pre 
  :font-family monospace
  :display block
@@ -57,7 +55,6 @@
 ("table td, table th" :padding #(0 (px 4)))
 ("table th.left, table td.left" :text-align left)
 ("table th.right, table td.right" :text-align right)
-(body :margin auto)
 (.post :position relative)
 (".post: after" 
  :display block 
@@ -109,7 +106,9 @@
  :z-index 11
  :position fixed
  :overflow overlay)
-("#table-of-contents h2" :color palevioletred)
+(header :margin 0 :padding 0)
+("header h1" :margin 0 :padding 0)
+("#table-of-contents h2" :color palevioletred :padding 0)
 ("#table-of-contents li" :list-style none)
 ("#table-of-contents li a" :font-size (px 16))
 ("#table-of-contents #text-table-of-contents"
@@ -129,7 +128,7 @@
  :bottom 0)
 (".footer > p" :margin 0 :line-height 1.5)
 (.footpara :display inline)
-("@media (min-width: 768px)" (body :padding (em 2)))
+;; ("@media (min-width: 768px)" (body :padding (em 2)))
 (.subtitle :text-align center :color red :font-weight bold :font-size (em 1.1))
 (".tag::before" :content ":")
 (".tag::after" :content ":")

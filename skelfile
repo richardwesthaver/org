@@ -26,7 +26,18 @@
       (save-buffer)))
     (flatten
      (mapcar (lambda (x) (directory-files-recursively x "\\(readme\\|index\\)[.]org$"))
-      (list "docs" "graph" "plan" "blog" "docs" "notes" "archive"))))))
+      (list "docs" "graph" "plan" "blog" "notes" "archive"))))))
+ (docs ()
+  (:update ()
+   (with-emacs (e)
+    (org-babel-lob-ingest company-babel-file)
+    (mapc (lambda (f)
+           (org-with-file-buffer f
+            (org-babel-execute-buffer)
+            (save-buffer)))
+    (flatten
+     (mapcar (lambda (x) (directory-files-recursively x "[.]org$"))
+      (list "docs")))))))
  (publish ()
   (with-emacs (e)
    (org-babel-lob-ingest company-babel-file)

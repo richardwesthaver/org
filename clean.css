@@ -42,10 +42,6 @@ hr: after {
   content:  "----------------------------------------------------------------";
   color:  #EDF060;
 }
-ul, ol {
-  padding:  0;
-  margin:  0 0 20px 20px;
-}
 code, pre {
   font-family:  "3270", monospace;
   overflow: overlay;
@@ -62,13 +58,6 @@ code:before, code:after {
 }
 .src {
   font-family: monospace;
-}
-p {
-  white-space: pre-line;
-}
-p::after{
-  content: "\a\a";
-  white-space: pre;
 }
 pre {
   font-family:  monospace;
@@ -138,33 +127,6 @@ table th.left, table td.left {
 table th.right, table td.right {
   text-align:  right;
 }
-/* body */
-body {
-  margin:  auto auto;
-}
-/* head */
-.masthead {
-  color:  #EDF060;
-}
-.masthead: after {
-  display:  block;
-  content:  '----------------------------------------------------------------';
-  color:  #EDF060;
-}
-.masthead a {
-  color:  #EDF060;
-}
-.masthead ul {
-  list-style:  none;
-}
-.masthead li {
-  display:  inline-block;
-}
-.masthead li + li:before {
-  display:  inline-block;
-  content:  "\00B7 \00a0";
-  color:  #EDF060;
-}
 /* searchform*/
 /* #searchform { */
 /*   position:  absolute; */
@@ -196,15 +158,6 @@ body {
 /*   background-color:  #3F3F37; */
 /*   width:  160px; */
 /* } */
-.masthead img.avatar {
-  position:  relative;
-  float:  right;
-  margin-top:  -100px;
-  margin-bottom:  -100%;
-  margin-right:  10%;
-  width:  200px;
-  background-color:  #3F3F37;
-}
 /* post */
 .post {
   position:  relative;
@@ -297,16 +250,16 @@ button:hover {background: #3F3F37; color:#EDF060;}
 .home {float:left; font-size:24px;}
 .up {float:left; font-size:24px;}
 
+header { margin: 0; padding: 0; }
+header h1 { margin: 0; padding: 0; }
+#table-of-contents h2 { color: palevioletred; padding: 0; }
+
 /* table of content */
 #table-of-contents {
   cursor: pointer;
   z-index:  11;
   position: fixed;
   overflow: overlay;
-}
-
-#table-of-contents h2 {
-  color: palevioletred;
 }
 
 #table-of-contents li {
@@ -349,13 +302,12 @@ button:hover {background: #3F3F37; color:#EDF060;}
 /* Responsive
    -------------------------------------------------- */
 
-@media (min-width:  768px) {
-  /* Increase body padding and font-sizes */
-  body {
-    padding: 2em;
-  }
-}
-
+/* @media (min-width:  768px) { */
+/*   /\* Increase body padding and font-sizes *\/ */
+/*   body { */
+/*     padding: 2em; */
+/*   } */
+/* } */
 
 .subtitle {
   text-align: center;
@@ -381,7 +333,6 @@ h3 .tag {
 .org-center {
   text-align: center;
 }
-
 
 .org-dl dt {
   font-weight: bold;
