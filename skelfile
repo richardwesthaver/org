@@ -36,8 +36,9 @@
             (org-babel-execute-buffer)
             (save-buffer)))
     (flatten
-     (mapcar (lambda (x) (directory-files-recursively x "[.]org$"))
-      (list "docs")))))))
+     (cons "docs/core/ref.org"
+      (mapcar (lambda (x) (directory-files-recursively x "[.]org$"))
+       (list "docs"))))))))
  (publish ()
   (with-emacs (e)
    (org-babel-lob-ingest company-babel-file)
