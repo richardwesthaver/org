@@ -1,7 +1,3 @@
-html {
-  scroll-padding-top: 1em;
-}
-
 body {
   font-family:  "CommitMono", monospace;
   color:  #EFFAF9;
@@ -306,26 +302,14 @@ button:hover {background: #3F3F37; color:#EDF060;}
   cursor: pointer;
   z-index:  11;
   position: fixed;
+  overflow: overlay;
 }
 
 #table-of-contents h2 {
   color: palevioletred;
-  visibility: visible;
-}
-
-#orgjq-contracted h2 {
-  visibility: hidden;
-}
-
-#table-of-contents ul {
-  margin-left:  14pt;
-  margin-bottom:  10pt;
-  padding:  0
 }
 
 #table-of-contents li {
-  padding:  0;
-  margin:  1px;
   list-style:  none;
 }
 
