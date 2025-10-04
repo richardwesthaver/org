@@ -15,12 +15,11 @@
 #+COMMENT: #+ODT_STYLES_FILE: ~/org/ox/odt-theme.xml
 #+LATEX_HEADER: \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 #+LATEX_HEADER: \hypersetup{colorlinks, citecolor=red,filecolor=magenta,linkcolor=magenta,urlcolor=magenta}
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.otom8.dev/font/commit-mono.css" />
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.otom8.dev/font/3270.css" />
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.otom8.dev/font/pragmata-pro.css" />
 #+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.otom8.dev/js/jquery.min.js"></script>
 #+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.otom8.dev/js/esquemadorg.js"></script>
 #+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.otom8.dev/js/org.js"></script>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.otom8.dev/font/commit-mono.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.otom8.dev/font/bqn.css" />
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.otom8.dev/css/htmlize.css" />
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.otom8.dev/css/clean.css" />
 #+BEGIN_EXPORT latex

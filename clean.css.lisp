@@ -3,84 +3,50 @@
 ;; 
 
 ;;; Code:
-(body :font-family  #("CommitMono" monospace) :color "#EFFAF9" :background-color "#0C0F0A")
-(div.content :display grid)
-(div.status :position relative)
+(body :font-family "CommitMono" :color (rgb 239/255 50/51 83/85) :background-color (rgb 4/85 1/17 2/51))
+(div.content :display grid :grid-auto-flow dense :max-width (ch 80) :justify-self anchor-center)
+(.status :display flex :flex-flow row-reverse)
 ("h1, h2, h3, h4, h5, h6" :position relative :font-weight bold :color cornsilk :text-rendering  optimizeLegibility)
-("i, em, b, strong" :padding-left (em .1) :padding-right (em .1))
-("b, strong" :font-weight bold :color "#EDF060")
+("b, strong" :font-weight bold :color (rgb 79/85 16/17 32/85))
 ("b:before, b: after, strong:before, strong:after" :content  "*")
-("i:before, i: after, em:before, em:after" :content  "/")
+("i:before, i: after, em:before, em:after" :content "/")
 (hr :margin 0 :border 0)
 ("hr:after" 
  :display block 
  :margin #(20 0)
  :content "----------------------------------------------------------------"
- :color "#EDF060")
+ :color (rgb 79/85 16/17 32/85))
 ("ul, ol" :padding 0 :margin #(0 0 20 20))
 ("code, pre" 
- :font-family #("3270" monospace)
+ :font-family "BQN"
  :overflow overlay
  :max-width fit-content)
-(code :font-family monospace :color "#EDF060" :background-color "#303330")
-("code:before, code:after" :content "=" :color "#DDCAD9")
-(.src :font-family monospace)
+(code :color (rgb 79/85 16/17 32/85) :background-color (rgb 16/85 1/5 16/85))
+("code:before, code:after" :content "=" :color (rgb 13/15 202/255 217/255))
 (pre 
- :font-family monospace
  :display block
- :margin #(0 0 14)
- :padding (px 15)
  :border-radius #((px 3) (px 3) (px 3) (px 3))
- :background-color "#303030"
- :word-break break-all
- :word-wrap break-word)
+ :background-color (rgb 16/85 16/85 16/85))
 (blockquote 
- :padding #(0 0 0 (px 20))
- :margin #(0 (px 30) (px 20) (px -22.5))
- :color "#AAD3F8"
- :border-left #((px 8) solid "#B08889")
+ :color (rgb 2/3 211/255 248/255)
+ :border-left #((px 8) solid (rgb 176/255 8/15 137/255))
  :max-width fit-content)
-(pre.example :border-left #((px 8) solid "#493657"))
-("blockquote p: last-child" :margin-bottom 0)
+(pre.example :border-left #((px 8) solid (rgb 73/255 18/85 29/85)))
 (img :display block :max-width (% 100) :height auto :margin auto :border-radius (px 5) :padding-bottom (em 1))
 ("figure > object" :height auto :margin auto)
-(a :font-weight inherit :line-height inherit :color "#84DCC6")
+(a :font-weight inherit :line-height inherit :color (rgb 44/85 44/51 66/85))
 ("sup a:before" :content "[")
 ("sup a:after" :content "]")
 ("a:hover"
  :text-decoration blink
- :color "#C43952"
- :background-color "#222222")
-(table :margin-bottom (px 4) :max-width (% 100) :border-style outset)
-("table td, table th" :padding #(0 (px 4)))
+ :color (rgb 196/255 19/85 82/255)
+ :background-color (rgb 2/15 2/15 2/15))
+(table :max-width fit-content :border-style outset :overflow-x overlay)
 ("table th.left, table td.left" :text-align left)
 ("table th.right, table td.right" :text-align right)
-(.post :position relative)
-(".post: after" 
- :display block 
- :content "----------------------------------------------------------------"
- :color "#EDF060")
-(".post img" :max-width (% 100))
-(".post li" :list-style #(none outside none))
-(".post ul > li:before" :content "- " :margin-left (em -1.25) :color "#EDF060")
-(".post ol" :counter-reset o-list)
-(".post ol > li:before" 
- :content #("counter(o-list)" ") ")
- :counter-increment o-list
- :margin-left (em -1.85)
- :color "#EDF060")
-(".post pre li" :font-family monospace :list-style-type decimal)
-(".post pre li:before" :display none)
-(.post-info :display inline-block :margin #((px -10) 0 (px -10)) :color "#EDF060")
-(".post-info + .post-info:before" :content "\2223 \00a0")
-(".post-meta:after" 
- :content  "----------------------------------------------------------------"
- :display block
- :margin-top (px -1)
- :color "#EDF060")
-("#index" :display block :text-align left :color "#DDCAD9" :font-size (px 48) :font-stretch ultra-expanded)
+("#index" :display block :text-align left :color (rgb 13/15 202/255 217/255) :font-size (px 48) :font-stretch ultra-expanded)
 ("div #text-index"
- :color "#EDF060"
+ :color (rgb 79/85 16/17 32/85)
  :display none
  :text-align left
  ;; FIX 2025-10-02: (defun blur)
@@ -96,7 +62,7 @@
  :color silver
  :font-size (px 16)
  :cursor pointer)
-("button:hover" :background "#3F3F37" :color "#EDF060")
+("button:hover" :background (rgb 21/85 21/85 11/51) :color (rgb 79/85 16/17 32/85))
 (.show :float right)
 (.hide :float right)
 (.home :float left :font-size (px 24))
@@ -105,52 +71,43 @@
  :cursor pointer
  :z-index 11
  :position fixed
+ :top 0
+ :right 0
+ :height (% 100)
+ :max-width min-content
  :overflow overlay)
 (header :margin 0 :padding 0)
 ("header h1" :margin 0 :padding 0)
-("#table-of-contents h2" :color palevioletred :padding 0)
+("#table-of-contents h2" :color palevioletred :padding 0 :text-align right)
 ("#table-of-contents li" :list-style none)
 ("#table-of-contents li a" :font-size (px 16))
 ("#table-of-contents #text-table-of-contents"
  :backdrop-filter blur(6px)
- :display none
- :padding-right (em 0.1))
+ :display none)
 ("#table-of-contents:hover #text-table-of-contents" 
  :display block
- :padding  (em 0.5)
- :margin-top (em -1.5))
-(.footer 
- :margin  #((px 80) 0 0) 
- :text-align  center 
- :font-size  (px 13) 
- :color  "#DDCAD9"
- :left 0
- :bottom 0)
-(".footer > p" :margin 0 :line-height 1.5)
-(.footpara :display inline)
-;; ("@media (min-width: 768px)" (body :padding (em 2)))
+ :padding  (em 0.5))
 (.subtitle :text-align center :color red :font-weight bold :font-size (em 1.1))
 (".tag::before" :content ":")
 (".tag::after" :content ":")
-(.tag :float right :color "#8A7090")
+(.tag :float right :color (rgb 46/85 112/255 48/85))
 ("h3 .tag" :right (px 0) :position absolute :color lightpink)
 (.org-center :text-align center)
 (".org-dl dt" :font-weight bold)
 (".org-dl dd::before" :content "  : ")
 (.title :text-align center)
-(div#postamble.status :text-align right)
-(.org-org-ref-acronym :color "#ee7600" :text-decoration underline)
-(.org-org-ref-cite :color "#c3d5c3" :text-decoration underline)
-(.org-org-ref-glossary :color "#8968cd" :text-decoration underline)
-(.org-org-ref-label :color "#8b008b" :text-decoration underline)
-(.org-org-ref-ref :color "#e1cc96" :text-decoration underline)
-(.org-org-scheduled :color "#006400")
-(.org-org-scheduled-previously :color "#b22222")
-(.org-org-scheduled-today :color "#006400")
-(.org-org-sexp-date :color "#a020f0")
-(.org-org-special-keyword :color "#a020f0")
+(.org-org-ref-acronym :color (rgb 14/15 118/225 0) :text-decoration underline)
+(.org-org-ref-cite :color (rgb 13/17 71/85 13/17) :text-decoration underline)
+(.org-org-ref-glossary :color (rgb 137/255 104/255 41/51) :text-decoration underline)
+(.org-org-ref-label :color (rgb 139/255 0 139/255) :text-decoration underline)
+(.org-org-ref-ref :color (rgb 15/17 4/5 10/17) :text-decoration underline)
+(.org-org-scheduled :color (rgb 0 20/51 0))
+(.org-org-scheduled-previously :color (rgb 178/255 2/15 2/15))
+(.org-org-scheduled-today :color (rgb 0 20/51 0))
+(.org-org-sexp-date :color (rgb 32/51 32/255 16/17))
+(.org-org-special-keyword :color (rgb 32/51 32/255 16/17))
 (.org-org-todo :color (rgb 1 0 0) :font-weight bold)
-(.org-org-done :color "#85BB41" :font-weight bold)
+(.org-org-done :color (rgb 133/255 11/15 13/51) :font-weight bold)
 (.PROJECT :color lightseagreen :font-weight bold)
 (.NOTE :color lemonchiffon :font-weight bold)
 (.PRODUCT :color olivedrab :font-weight bold)
@@ -167,9 +124,8 @@
 (.TBD :color darkred :font-weight bold)
 (.HACK :color coral :font-weight bold)
 (.SPRINT :color violet :font-weight bold)
-(.org-org-upcoming-deadline :color "#b22222")
-(.org-org-upcoming-distant-deadline :color (rgb 0 0 0) :background-color "#ffffff")
+(.org-org-upcoming-deadline :color (rgb 178/255 2/15 2/15))
+(.org-org-upcoming-distant-deadline :color (rgb 0 0 0) :background-color (rgb 1 1 1))
 (.org-org-warning :color (rgb 1 0 0) :font-weight bold)
-(.status :position absolute :left (em 1))
 ("div #footnotes" :padding-bottom (em 1))
-("h1:target" :color "#F0753C")
+("h1:target" :color (rgb 16/17 39/85 4/17))
