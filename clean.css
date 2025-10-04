@@ -1,5 +1,5 @@
 body {
-  font-family:  "CommitMono";
+  font-family: monospace;
   color: #EFFAF9;
   background-color: #000000;
 }
@@ -8,7 +8,6 @@ div.content {
   display: grid;
   grid-auto-flow: dense;
   max-width: 80ch;
-  justify-self: anchor-center;
 }
 
 h1, h2, h3, h4, h5, h6 {

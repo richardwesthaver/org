@@ -3,8 +3,8 @@
 ;; 
 
 ;;; Code:
-(body :font-family "CommitMono" :color (rgb 239/255 50/51 83/85) :background-color (rgb 4/85 1/17 2/51))
-(div.content :display grid :grid-auto-flow dense :max-width (ch 80) :justify-self anchor-center)
+(body :font-family monospace :color (rgb 239/255 50/51 83/85) :background-color (rgb 4/85 1/17 2/51))
+(div.content :display grid :grid-auto-flow dense :max-width (ch 80))
 (.status :display flex :flex-flow row-reverse)
 ("h1, h2, h3, h4, h5, h6" :position relative :font-weight bold :color cornsilk :text-rendering  optimizeLegibility)
 ("b, strong" :font-weight bold :color (rgb 79/85 16/17 32/85))
