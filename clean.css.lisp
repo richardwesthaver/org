@@ -4,25 +4,15 @@
 
 ;;; Code:
 (body :font-family monospace :color (rgb 239/255 50/51 83/85) :background-color (rgb 4/85 1/17 2/51))
-(div.content :display grid :grid-auto-flow dense :max-width (ch 80))
+(.content :display grid :grid-auto-flow dense :max-width (ch 80) :font-size (px 16))
 (.status :display flex :flex-flow row-reverse)
-("h1, h2, h3, h4, h5, h6" :position relative :font-weight bold :color cornsilk :text-rendering  optimizeLegibility)
-("b, strong" :font-weight bold :color (rgb 79/85 16/17 32/85))
-("b:before, b: after, strong:before, strong:after" :content  "*")
-("i:before, i: after, em:before, em:after" :content "/")
-(hr :margin 0 :border 0)
-("hr:after" 
- :display block 
- :margin #(20 0)
- :content "----------------------------------------------------------------"
- :color (rgb 79/85 16/17 32/85))
-("ul, ol" :padding 0 :margin #(0 0 20 20))
-("code, pre" 
+("h1, h2, h3, h4, h5, h6" :color cornsilk)
+("b, strong" :color (rgb 79/85 16/17 32/85))
+(pre
  :font-family "BQN"
  :overflow overlay
  :max-width fit-content)
 (code :color (rgb 79/85 16/17 32/85) :background-color (rgb 16/85 1/5 16/85))
-("code:before, code:after" :content "=" :color (rgb 13/15 202/255 217/255))
 (pre 
  :display block
  :border-radius #((px 3) (px 3) (px 3) (px 3))
@@ -32,11 +22,9 @@
  :border-left #((px 8) solid (rgb 176/255 8/15 137/255))
  :max-width fit-content)
 (pre.example :border-left #((px 8) solid (rgb 73/255 18/85 29/85)))
-(img :display block :max-width (% 100) :height auto :margin auto :border-radius (px 5) :padding-bottom (em 1))
+(img :display block :height auto :margin auto :border-radius (px 5))
 ("figure > object" :height auto :margin auto)
 (a :font-weight inherit :line-height inherit :color (rgb 44/85 44/51 66/85))
-("sup a:before" :content "[")
-("sup a:after" :content "]")
 ("a:hover"
  :text-decoration blink
  :color (rgb 196/255 19/85 82/255)
@@ -73,28 +61,21 @@
  :position fixed
  :top 0
  :right 0
- :height (% 100)
- :max-width min-content
+ :max-width fit-content
  :overflow overlay)
 (header :margin 0 :padding 0)
 ("header h1" :margin 0 :padding 0)
 ("#table-of-contents h2" :color palevioletred :padding 0 :text-align right)
 ("#table-of-contents li" :list-style none)
-("#table-of-contents li a" :font-size (px 16))
+("#table-of-contents ul" :padding 0)
 ("#table-of-contents #text-table-of-contents"
  :backdrop-filter blur(6px)
  :display none)
-("#table-of-contents:hover #text-table-of-contents" 
- :display block
- :padding  (em 0.5))
 (.subtitle :text-align center :color red :font-weight bold :font-size (em 1.1))
-(".tag::before" :content ":")
-(".tag::after" :content ":")
 (.tag :float right :color (rgb 46/85 112/255 48/85))
 ("h3 .tag" :right (px 0) :position absolute :color lightpink)
 (.org-center :text-align center)
 (".org-dl dt" :font-weight bold)
-(".org-dl dd::before" :content "  : ")
 (.title :text-align center)
 (.org-org-ref-acronym :color (rgb 14/15 118/225 0) :text-decoration underline)
 (.org-org-ref-cite :color (rgb 13/17 71/85 13/17) :text-decoration underline)
