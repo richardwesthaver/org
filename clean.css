@@ -147,7 +147,7 @@ header { margin: 0; padding: 0; }
 header h1 { margin: 0; padding: 0; }
 
 /* table of content */
-#table-of-contents h2 { color: palevioletred; padding: 0; text-align: right;}
+#table-of-contents h2 { color: palevioletred; padding: 0; margin: 0; text-align: right;}
 
 #table-of-contents {
   cursor: pointer;
@@ -155,21 +155,18 @@ header h1 { margin: 0; padding: 0; }
   position: fixed;
   top: 0;
   right: 0;
-  overflow: overlay;
-  max-width: fit-content;
 }
 
 #table-of-contents li {
   list-style:  none;
 }
 
-#table-of-contents ul {
-  padding: 0;
-}
-
 #table-of-contents #text-table-of-contents {
   backdrop-filter: blur(6px);
   display:  none;
+  position: sticky;
+  height: 100vh;
+  overflow-y: overlay;
 }
 
 .subtitle {

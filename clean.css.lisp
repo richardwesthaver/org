@@ -60,17 +60,17 @@
  :z-index 11
  :position fixed
  :top 0
- :right 0
- :max-width fit-content
- :overflow overlay)
+ :right 0)
 (header :margin 0 :padding 0)
 ("header h1" :margin 0 :padding 0)
-("#table-of-contents h2" :color palevioletred :padding 0 :text-align right)
+("#table-of-contents h2" :color palevioletred :padding 0 :margin 0 :text-align right)
 ("#table-of-contents li" :list-style none)
-("#table-of-contents ul" :padding 0)
 ("#table-of-contents #text-table-of-contents"
  :backdrop-filter blur(6px)
- :display none)
+ :display none
+ :position sticky
+ :overflow-y overlay
+ :height 100vh)
 (.subtitle :text-align center :color red :font-weight bold :font-size (em 1.1))
 (.tag :float right :color (rgb 46/85 112/255 48/85))
 ("h3 .tag" :right (px 0) :position absolute :color lightpink)
