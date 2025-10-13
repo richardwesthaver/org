@@ -30,6 +30,10 @@ code {
   background-color:  #101800;
 }
 
+details p {
+  margin: 0;
+}
+
 pre {
   border-radius:  3px 3px 3px 3px;
   background-color:  #303030;
