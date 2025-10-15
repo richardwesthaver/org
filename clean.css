@@ -34,6 +34,10 @@ details p {
   margin: 0;
 }
 
+input#search {
+  max-width: fit-content;
+}
+
 pre {
   border-radius:  3px 3px 3px 3px;
   background-color:  #303030;

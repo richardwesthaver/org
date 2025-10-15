@@ -14,6 +14,7 @@
  :max-width fit-content)
 (code :color (rgb 79/85 16/17 32/85) :background-color (rgb 16/85 1/5 16/85))
 ("details p" :margin 0)
+("input#search" :max-width fit-content)
 (pre 
  :display block
  :border-radius #((px 3) (px 3) (px 3) (px 3))
