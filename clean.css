@@ -34,7 +34,7 @@ details p {
   margin: 0;
 }
 
-input#search {
+input {
   max-width: fit-content;
 }
 
