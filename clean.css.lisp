@@ -111,4 +111,4 @@
 (.org-org-upcoming-distant-deadline :color (rgb 0 0 0) :background-color (rgb 1 1 1))
 (.org-org-warning :color (rgb 1 0 0) :font-weight bold)
 ("div #footnotes" :padding-bottom (em 1))
-("h1:target" :color (rgb 16/17 39/85 4/17))
+(":target" :color (rgb 16/17 39/85 4/17))

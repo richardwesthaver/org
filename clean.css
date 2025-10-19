@@ -300,7 +300,7 @@ div #footnotes {
   padding: 1em;
 }
 
-h1:target {
+:target {
   color: #F0753C;
 }
 
