@@ -1,5 +1,5 @@
 ; -*- mode: org -*-
-#+STARTUP: entitiespretty
+#+startup: overview
 #+language: ulang
 #+DATE: {{{modification-time("%F %r", t)}}}
 #+OPTIONS: org-html-head-include-default-style:t ^:nil _:nil email:t \n:nil Tex:t LaTeX:t broken-links:mark toc:t

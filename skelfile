@@ -39,6 +39,8 @@
      (cons "docs/core/ref.org"
       (mapcar (lambda (x) (directory-files-recursively x "[.]org$"))
        (list "docs"))))))))
+ (css ()
+  (css:compile-css-file "clean.css.lisp" "clean.css"))
  (publish ()
   (with-emacs (e)
    (org-babel-lob-ingest company-babel-file)
