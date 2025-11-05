@@ -33,7 +33,7 @@
  :background-color (rgb 2/15 2/15 2/15))
 (table :max-width fit-content :border-style outset :overflow-x overlay)
 (#("table th.left" "table td.left") :text-align left)
-(#"table th.right" "table td.right") :text-align right)
+(#("table th.right" "table td.right") :text-align right)
 ("#index" :display block :text-align left :color (rgb 13/15 202/255 217/255) :font-size (px 48) :font-stretch ultra-expanded)
 ((div "#text-index")
  :color (rgb 79/85 16/17 32/85)
