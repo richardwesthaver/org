@@ -15,10 +15,11 @@
  (org-deploy-host :env "compiler.company")
  (org-deploy-path :env "/srv/http/compiler.company/"))
 :rules
-((build ()
+((build (css)
   (with-emacs (e)
    (org-babel-lob-ingest company-babel-file)
    (org-graph-init)
+   (org-graph-save)
    (mapc 
     (lambda (f)
      (org-with-file-buffer f
@@ -26,7 +27,10 @@
       (save-buffer)))
     (flatten
      (mapcar (lambda (x) (directory-files-recursively x "\\(readme\\|index\\)[.]org$"))
-      (list "docs" "graph" "plan" "blog" "notes" "archive"))))))
+      (list "docs" "graph" "plan" "blog" "notes" "archive")))))
+  (init :org-graph)
+  (organ/graph:org-graph-json)
+  (organ/graph:org-graph-minisearch-json))
  (docs ()
   (:update ()
    (with-emacs (e)
@@ -39,8 +43,7 @@
      (cons "docs/core/ref.org"
       (mapcar (lambda (x) (directory-files-recursively x "[.]org$"))
        (list "docs"))))))))
- (css ()
-  (css:compile-css-file "clean.css.lisp" "clean.css"))
+ (css () (css:compile-css-file "clean.css.lisp" (stash-pathname "clean.css")))
  (publish ()
   (with-emacs (e)
    (org-babel-lob-ingest company-babel-file)
