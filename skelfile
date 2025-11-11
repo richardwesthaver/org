@@ -17,6 +17,7 @@
  (org-deploy-path :env "/tmp/www"))
 :rules
 ((build (build-css)
+  (init :xdg)
   (with-emacs (e)
    (org-babel-lob-ingest company-babel-file)
    (org-graph-init)
@@ -31,7 +32,8 @@
       (list "docs" "graph" "plan" "blog" "notes" "archive")))))
   (init :org-graph)
   (organ/graph:org-graph-json)
-  (organ/graph:org-graph-minisearch-json))
+  (organ/graph:org-graph-minisearch-json)
+  (organ/graph:org-graph-tinysearch-json))
  (docs ()
   (:update ()
    (with-emacs (e)
@@ -53,7 +55,7 @@
    (load-library "publish")
    (publish t t)))
  (deploy-ssh () #$scp -i $ORG_DEPLOY_SSH_KEY -r /tmp/www/* "$ORG_DEPLOY_USER@$ORG_DEPLOY_HOST:$ORG_DEPLOY_PATH"$#)
- (deploy-cloudflare ())
+ (deploy-cloudflare () (nyi!))
  (deploy (deploy-cloudflare))
  (upstream ()
   (labels ((bump (name)
@@ -85,7 +87,7 @@
              (bump s))))
    (bump* "graph" "meta" "plan" "docs" "blog" "notes" "org")))
  (dist-repos ()
-  (vc-bundle (sk-vc *skel-project*) "/opt/store/packy/vc/org.hg")
+  (vc-bundle (vc *skel-project*) "/opt/store/packy/vc/org.hg")
   (mapc
    (lambda (x)
     (vc-bundle
