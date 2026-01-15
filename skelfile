@@ -4,7 +4,7 @@
 :version "0.1.0"
 :license "MPL"
 :description "CC Org Files"
-:tags (org docs notes blog meta plan archive notes graph)
+:tags (org docs notes meta plan archive graph)
 :vc (:hg "https://vc.compiler.company/org"
      (cb (:git "ssh://git@codeberg.org/c-c/org"))
      (gh (:git "ssh://git@github.com/richardwesthaver/org")))
@@ -30,7 +30,7 @@
       (save-buffer)))
     (flatten
      (mapcar (lambda (x) (directory-files-recursively x "\\(readme\\|index\\)[.]org$"))
-      (list "docs" "graph" "plan" "blog" "notes" "archive")))))
+      (list "docs" "graph" "plan" "notes" "archive")))))
   (init :org-graph)
   (organ/graph:org-graph-json :path ".stash/org-graph.json")
   (organ/graph:org-graph-minisearch-json :path ".stash/org-graph-index.json")
@@ -89,7 +89,6 @@
                (vc-submodule r :add :url "https://github.com/richardwesthaver/notes")
                (vc-submodule r :add :url "https://github.com/richardwesthaver/meta")
                (vc-submodule r :add :url "https://github.com/richardwesthaver/plan")
-               (vc-submodule r :add :url "https://github.com/richardwesthaver/blog")
                (vc-submodule r :add :url "https://github.com/richardwesthaver/docs")
                (vc-add r ".gitmodules")
                (vc-commit r "gitmodules"))
@@ -98,7 +97,7 @@
            (bump* (&rest subrepos)
             (dolist (s subrepos)
              (bump s))))
-   (bump* "graph" "meta" "plan" "docs" "blog" "notes" "org")))
+   (bump* "graph" "meta" "plan" "docs" "notes" "org")))
  (dist-repos ()
   (vc-bundle (vc *skel-project*) "/opt/store/packy/vc/org.hg")
   (mapc
@@ -106,7 +105,7 @@
     (vc-bundle
      (make-repo (probe-file (directory-path x)))
      (merge-pathnames (format nil "vc/~A.hg" x) "/opt/store/packy/")))
-   '("graph" "plan" "docs" "blog" "meta" "notes" "archive")))
+   '("graph" "plan" "docs" "meta" "notes" "archive")))
  (dist-source ()
   (with-directory ".."
    #$tar --exclude='*/.hg' --exclude='#*#' -I 'zstd' -cf org/org.tar.zst org/*$#)))
