@@ -106,6 +106,6 @@
      (make-repo (probe-file (directory-path x)))
      (merge-pathnames (format nil "vc/~A.hg" x) "/opt/store/packy/")))
    '("graph" "plan" "docs" "meta" "notes" "archive")))
- (dist-source ()
+ (dist-source (clean)
   (with-directory ".."
    #$tar --exclude='*/.hg' --exclude='#*#' -I 'zstd' -cf org/org.tar.zst org/*$#)))
