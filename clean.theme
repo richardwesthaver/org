@@ -20,6 +20,7 @@
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.otom8.dev/css/clean.css" />
 #+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.otom8.dev/js/jquery.mjs"></script>
 #+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.otom8.dev/js/org.js"></script>
+#+PROPERTY: heaer-args :eval no-export
 #+BEGIN_EXPORT latex
 \newpage
 #+END_EXPORT
