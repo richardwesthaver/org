@@ -108,4 +108,8 @@
    '("graph" "plan" "docs" "meta" "notes" "archive")))
  (dist-source (clean)
   (with-directory ".."
-   #$tar --exclude='*/.hg' --exclude='#*#' -I 'zstd' -cf org/org.tar.zst org/*$#)))
+   #$tar --exclude='*/.hg' --exclude='#*#' -I 'zstd' -cf org/org.tar.zst org/*$#))
+ (dist-html ()
+  (with-directory ".stash"
+   #$tar -I 'zstd' -cf compiler.company.tar.zst www/*
+   cp -f compiler.company.tar.zst $PACKY_HOME/doc/html/compiler.company.tar.zst$#)))
