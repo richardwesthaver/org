@@ -17,7 +17,8 @@
  (org-deploy-host :env "otom8.dev")
  (org-deploy-path :env "ssh://rurik:/srv/www"))
 :rules
-((build (build-css update-docs)
+((default (build publish deploy dist-html dist-source dist-repos))
+ (build (build-css update-docs)
   (init :xdg)
   (with-emacs (e)
    (org-babel-lob-ingest company-babel-file)
@@ -67,7 +68,7 @@
     (publish t t)))
  (deploy-ssh () #$scp -i $ORG_DEPLOY_SSH_KEY -r .stash/www/* "$ORG_DEPLOY_USER@$ORG_DEPLOY_HOST:$ORG_DEPLOY_PATH"$#)
  (deploy-cloudflare () (nyi!))
- (deploy () 
+ (deploy (deploy-css)
   #$cp -rf .stash/www/* $WWW_HOME
     cp -rf .stash/*.json $CDN_HOME/data/$#)
  (upstream ()
