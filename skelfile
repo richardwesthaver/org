@@ -21,6 +21,8 @@
  (build (build-css update-docs)
   (init :xdg)
   (with-emacs (e)
+   (unless (slime-connected-p)
+    (slime-start))
    (org-babel-lob-ingest company-babel-file)
    (org-graph-init)
    (org-graph-save)
