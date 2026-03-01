@@ -54,7 +54,7 @@
   (probe-delete-directory ".stash" :recursive t)
   (mapc 'delete-file (directory "**/*.html")))
  (css () 
-  (:build () (css:compile-css-file "clean.css.lisp" (stash-pathname "clean.css")))
+  (:build () (css:compile-css-file "clean.css.lisp" ".stash/clean.css"))
   (:deploy () #$cp .stash/clean.css $CDN_HOME/css/$#))
  (browse ()
   (if-let ((www (probe-directory ".stash/www/")))
