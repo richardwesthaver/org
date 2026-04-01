@@ -1,2 +1,2 @@
 [.]stash/.*
-[.](css|zstd)$
+.*[.](css|zstd)$
