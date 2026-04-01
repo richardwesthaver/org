@@ -86,7 +86,7 @@
              (bump s))))
    (bump* "graph" "meta" "plan" "docs" "notes")
    (vc-export (vc *skel-project*) :upstream nil)
-   (with-repo (r :path "/tmp/org" :type :git)
+   (with-repo (r :path "/tmp/org" :type :git :delete t)
     (setf (vc-remotes r) (remotes "org"))
     (loop for remote across (setf (vc-remotes r) (remotes "org"))
      do (vc-remote r :add :name (name remote) :url (uri remote)))
