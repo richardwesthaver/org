@@ -21,19 +21,18 @@
  (build (build-css update-docs)
   (init :xdg)
   (with-emacs (e)
-   (unless (slime-connected-p)
-    (slime-start))
-   (org-babel-lob-ingest company-babel-file)
+   ;; (org-babel-lob-ingest company-babel-file)
    (org-graph-init)
    (org-graph-save)
    (mapc 
     (lambda (f)
+     (message "updating org file: %s" f)
      (org-with-file-buffer f
       (org-babel-execute-buffer)
       (save-buffer)))
     (flatten
      (mapcar (lambda (x) (directory-files-recursively x "\\(readme\\|index\\)[.]org$"))
-      (list "docs" "graph" "plan" "notes" "archive")))))
+      (list "graph" "plan" "notes" "archive")))))
   (init :org-graph)
   (organ/graph:org-graph-json :path ".stash/org-graph.json")
   (organ/graph:org-graph-minisearch-json :path ".stash/org-graph-index.json")
@@ -41,15 +40,18 @@
  (docs ()
   (:update ()
    (with-emacs (e)
+    (unless (slime-connected-p) (slime-start))
+    (slime-eval 
+     '(progn (load-system :alien) (load-system :core) (load-system :alien/tests) (load-system :core/tests)))
     (org-babel-lob-ingest company-babel-file)
     (mapc (lambda (f)
+           (message "updating org file: %s" f)
            (org-with-file-buffer f
             (org-babel-execute-buffer)
             (save-buffer)))
-    (flatten
-     (cons "docs/core/ref.org"
+     (flatten
       (mapcar (lambda (x) (directory-files-recursively x "[.]org$"))
-       (list "docs"))))))))
+       (list "docs")))))))
  (clean ()
   (probe-delete-directory ".stash" :recursive t)
   (mapc 'delete-file (directory "**/*.html")))
@@ -110,7 +112,7 @@
    '("graph" "plan" "docs" "meta" "notes" "archive")))
  (dist-source (clean)
   (with-directory ".."
-   #$tar --exclude='*/.hg' --exclude='#*#' -I 'zstd' -cf org/org.tar.zst org/*$#))
+   #$tar --exclude='*/.hg' --exclude='#*#' -I 'zstd' -cf $PACKY_HOME/src/org.tar.zst org/*$#))
  (dist-html ()
   (with-directory ".stash"
    #$tar -I 'zstd' -cf compiler.company.tar.zst www/*
