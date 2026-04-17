@@ -4,7 +4,7 @@
 #+DATE: {{{modification-time("%F %r", t)}}}
 #+OPTIONS: org-html-head-include-default-style:t ^:nil _:nil email:t \n:nil Tex:t LaTeX:t broken-links:mark toc:t
 #+HTML_DOCTYPE: html5
-#+HTML_LINK_HOME: https://otom8.dev
+#+HTML_LINK_HOME: https://compiler.company
 #+HTML_LINK_UP: ./
 #+LATEX_HEADER: \usepackage{placeins}
 #+LATEX_HEADER: \usepackage{parskip}
@@ -15,11 +15,11 @@
 #+COMMENT: #+ODT_STYLES_FILE: ~/org/ox/odt-theme.xml
 #+LATEX_HEADER: \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 #+LATEX_HEADER: \hypersetup{colorlinks, citecolor=red,filecolor=magenta,linkcolor=magenta,urlcolor=magenta}
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.otom8.dev/font/bqn.css" />
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.otom8.dev/css/htmlize.css" />
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.otom8.dev/css/clean.css" />
-#+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.otom8.dev/js/jquery.mjs"></script>
-#+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.otom8.dev/js/org.js"></script>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/font/bqn.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/css/htmlize.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/css/clean.css" />
+#+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.compiler.company/js/jquery.mjs"></script>
+#+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.compiler.company/js/org.js"></script>
 #+PROPERTY: header-args :eval no-export
 #+BEGIN_EXPORT latex
 \newpage

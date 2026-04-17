@@ -14,7 +14,7 @@
  (packy-home :env "/opt/store/packy")
  (org-deploy-ssh-key :env "~/.ssh/ellis_aws.pem")
  (org-deploy-user :env "fedora")
- (org-deploy-host :env "otom8.dev")
+ (org-deploy-host :env "compiler.company")
  (org-deploy-path :env "ssh://rurik:/srv/www"))
 :rules
 ((default (build publish deploy dist-html dist-source dist-repos))
@@ -40,9 +40,8 @@
  (docs ()
   (:update ()
    (with-emacs (e)
-    (unless (slime-connected-p) (slime-start))
-    (slime-eval 
-     '(progn (load-system :alien) (load-system :core) (load-system :alien/tests) (load-system :core/tests)))
+    (unless (slime-connected-p) (slime))
+    (slime-interactive-eval "(mapc 'std:load-system '(:alien :core :alien/tests :core/tests))")
     (org-babel-lob-ingest company-babel-file)
     (mapc (lambda (f)
            (message "updating org file: %s" f)
