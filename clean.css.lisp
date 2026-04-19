@@ -3,22 +3,19 @@
 ;; 
 
 ;;; Code:
-(body :font-family monospace :color (rgb 239/255 50/51 83/85) :background-color (rgb 4/85 1/17 2/51))
-(.content :display grid :grid-auto-flow dense :max-width (ch 80) :font-size (px 16))
+(body :font-family "CommitMono" :color (rgb 239/255 50/51 83/85))
+(.content :display grid :grid-auto-flow dense :max-width (% 100) :font-size (px 16) :text-align justify)
 (.status :display flex :flex-flow row-reverse)
 (#(h1 h2 h3 h4 h5 h6) :color cornsilk)
 ("b, strong" :color (rgb 79/85 16/17 32/85))
-(pre
- :font-family "BQN"
- :overflow overlay
- :max-width fit-content)
-(code :color (rgb 79/85 16/17 32/85) :background-color (rgb 16/85 1/5 16/85))
 ((details p) :margin 0)
 (input :max-width fit-content)
+(code :color (rgb 79/85 16/17 32/85))
 (pre 
  :display block
- :border-radius #((px 3) (px 3) (px 3) (px 3))
- :background-color (rgb 16/85 16/85 16/85))
+ :background-color (rgb 4/255 0 1/51)
+ :overflow overlay
+ :max-width fit-content)
 (blockquote 
  :color (rgb 2/3 211/255 248/255)
  :border-left #((px 8) solid (rgb 176/255 8/15 137/255))

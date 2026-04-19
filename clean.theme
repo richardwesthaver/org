@@ -16,6 +16,7 @@
 #+LATEX_HEADER: \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 #+LATEX_HEADER: \hypersetup{colorlinks, citecolor=red,filecolor=magenta,linkcolor=magenta,urlcolor=magenta}
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/font/bqn.css" />
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/font/commit-mono.css" />
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/css/htmlize.css" />
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/css/clean.css" />
 #+HTML_HEAD_EXTRA: <script type="text/javascript" src="https://cdn.compiler.company/js/jquery.mjs"></script>
