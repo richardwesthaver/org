@@ -33,7 +33,6 @@
     (flatten
      (mapcar (lambda (x) (directory-files-recursively x "\\(readme\\|index\\)[.]org$"))
       (list "graph" "plan" "notes" "archive")))))
-  ;; FIX 2026-04-19: 
   (init :org-graph)
   (organ/graph:org-graph-json :path ".stash/org-graph.json")
   (organ/graph:org-graph-minisearch-json :path ".stash/org-graph-index.json")
@@ -41,7 +40,8 @@
  (slime ()
   (with-emacs (e)
    (progn
-    (unless (slime-connected-p) (slime))
+    (when (slime-connected-p) (slime-repl-quit))
+    (slime)
     (slime-interactive-eval "(mapc 'std:load-system '(:alien :core))")
     (slime-interactive-eval "(progn (load-module :alien :tests) (load-module :core :tests))"))))
  (docs ()

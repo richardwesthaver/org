@@ -4,7 +4,8 @@
 
 ;;; Code:
 (body :font-family "CommitMono" :color (rgb 239/255 50/51 83/85))
-(.content :display grid :grid-auto-flow dense :max-width (% 100) :font-size (px 16) :text-align justify)
+(.content :display grid :grid-auto-flow dense :font-size (px 14) :text-align justify
+          :text-wrap-style pretty :grid-template-columns fit-content(94%))
 (.status :display flex :flex-flow row-reverse)
 (#(h1 h2 h3 h4 h5 h6) :color cornsilk)
 ("b, strong" :color (rgb 79/85 16/17 32/85))
