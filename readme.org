@@ -5,7 +5,7 @@
 #+export_file_name: index
 #+OPTIONS: ^:nil toc:nil num:nil html-postamble:nil html-preamble:nil
 Welcome to The Compiler Company (CC).
-- [[gh:richardwesthaver][github]] / [[cb:c-c][codeberg]]
+- [[vc:][vc]] ([[gh:richardwesthaver][github]]/[[cb:c-c][codeberg]])
 * [[file:graph/][graph]]
 :PROPERTIES:
 :ID:       fbf365dd-0a36-4b0e-bfff-c8655eb80a51
