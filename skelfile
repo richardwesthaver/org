@@ -21,7 +21,7 @@
  (build (build-css update-docs)
   (init :xdg)
   (with-emacs (e)
-   ;; (org-babel-lob-ingest company-babel-file)
+   (org-babel-lob-ingest company-babel-file)
    (org-graph-init)
    (org-graph-save)
    (mapc 
@@ -47,15 +47,16 @@
      (sleep-for 2)
      (slime-eval-save "(ignore-errors (std/defsys:load-system '(:alien :core)))")
      (slime-eval-save "(ignore-errors (std/defsys:load-modules '(:alien :tests) '(:core :tests)))"))
-    (org-babel-lob-ingest company-babel-file)
-    (mapc (lambda (f)
-           (message "updating org file: %s" f)
-           (org-with-file-buffer f
-            (org-babel-execute-buffer)
-            (save-buffer)))
-     (flatten
-      (mapcar (lambda (x) (directory-files-recursively x "[.]org$"))
-       (list "docs")))))))
+    (progn
+     (org-babel-lob-ingest company-babel-file)
+     (mapc (lambda (f)
+            (message "updating org file: %s" f)
+            (org-with-file-buffer f
+             (org-babel-execute-buffer)
+             (save-buffer)))
+      (flatten
+       (mapcar (lambda (x) (directory-files-recursively x "[.]org$"))
+        (list "docs"))))))))
  (clean ()
   (probe-delete-directory ".stash" :recursive t)
   (mapc 'delete-file (directory "**/*.html")))
