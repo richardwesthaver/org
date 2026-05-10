@@ -15,7 +15,8 @@
  (org-deploy-ssh-key :env "~/.ssh/ellis_aws.pem")
  (org-deploy-user :env "fedora")
  (org-deploy-host :env "compiler.company")
- (org-deploy-path :env "ssh://rurik:/srv/www"))
+ (org-deploy-path :env "ssh://rurik:/srv/www")
+ (submods (list "graph" "meta" "plan" "docs" "notes" "archive")))
 :rules
 ((default (build publish deploy dist-html dist-source dist-repos))
  (build (build-css update-docs)
@@ -32,7 +33,7 @@
       (save-buffer)))
     (flatten
      (mapcar (lambda (x) (directory-files-recursively x "\\(readme\\|index\\)[.]org$"))
-      (list "graph" "plan" "notes" "archive")))))
+      (remove "archive" submods :test 'string=)))))
   (init :org-graph)
   (organ/graph:org-graph-json :path ".stash/org-graph.json")
   (organ/graph:org-graph-minisearch-json :path ".stash/org-graph-index.json")
@@ -118,7 +119,9 @@
  (dist-source (clean)
   (with-directory ".."
    #$tar --exclude='*/.hg' --exclude='#*#' -I 'zstd' -cf $PACKY_HOME/src/org.tar.zst org/*$#))
- (dist-html ()
+ (push ()
+  (mapc (lambda (x) (with-directory x #$hg push$#)) submods))
+  (dist-html ()
   (with-directory ".stash"
    #$tar -I 'zstd' -cf compiler.company.tar.zst www/*
    cp -f compiler.company.tar.zst $PACKY_HOME/doc/html/compiler.company.tar.zst$#)))
