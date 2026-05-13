@@ -120,8 +120,8 @@
   (with-directory ".."
    #$tar --exclude='*/.hg' --exclude='#*#' -I 'zstd' -cf $PACKY_HOME/src/org.tar.zst org/*$#))
  (push ()
-  (mapc (lambda (x) (with-directory x #$hg push$#)) submods))
-  (dist-html ()
+  (vc:update-repos "." :pull nil :push t))
+ (dist-html ()
   (with-directory ".stash"
    #$tar -I 'zstd' -cf compiler.company.tar.zst www/*
    cp -f compiler.company.tar.zst $PACKY_HOME/doc/html/compiler.company.tar.zst$#)))
