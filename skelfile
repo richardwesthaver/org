@@ -8,6 +8,7 @@
 :vc (:hg "https://vc.compiler.company/org"
      (cb (:git "ssh://git@codeberg.org/c-c/org"))
      (gh (:git "ssh://git@github.com/richardwesthaver/org")))
+:components ((init :type 
 :bind
 ((www-home :env "/opt/stash/data/web/www")
  (cdn-home :env "/opt/stash/data/web/cdn")
@@ -73,8 +74,7 @@
   (with-emacs (e)
    (setq org-publish-timestamp-directory (join-paths company-org-directory ".stash/cache/org-timestamps/")
          publish-dir (join-paths company-org-directory ".stash/www/"))
-    (org-babel-lob-ingest company-babel-file)
-    (load-library "publish")
+    (load "publish")
     (publish t t)))
  (deploy-ssh () #$scp -i $ORG_DEPLOY_SSH_KEY -r .stash/www/* "$ORG_DEPLOY_USER@$ORG_DEPLOY_HOST:$ORG_DEPLOY_PATH"$#)
  (deploy-cloudflare () (nyi!))
