@@ -24,10 +24,8 @@
 
 ;;; Code:
 (package-initialize)
-(add-to-list 'load-path (expand-file-name "site-lisp" user-emacs-directory))
-(load "organ")
-(load "publish")
-(load "ulang")
-(load "scrum")
+(use-package htmlize :ensure t)
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/")
+(load "autoloads")
 (ulang-init)
 (org-id-export-mode)
