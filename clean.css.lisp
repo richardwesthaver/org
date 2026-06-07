@@ -4,16 +4,14 @@
 
 ;;; Code:
 (body :font-family "CommitMono" :color (rgb 239/255 50/51 83/85))
-(.content :display grid :grid-auto-flow dense :font-size (px 14) :text-align justify
-          :text-wrap-style pretty :grid-template-columns fit-content(94%))
-(.status :display flex :flex-flow row-reverse)
+;; (.content :text-wrap-style pretty)
+;; (.status :display flex :flex-flow row-reverse)
 (#(h1 h2 h3 h4 h5 h6) :color cornsilk)
 ("b, strong" :color (rgb 79/85 16/17 32/85))
 ((details p) :margin 0)
 (input :max-width fit-content)
 (code :color (rgb 79/85 16/17 32/85))
 (pre 
- :display block
  :background-color (rgb 4/255 0 1/51)
  :overflow overlay
  :max-width fit-content)
@@ -50,10 +48,7 @@
 ;; (.hide :float right)
 (.home :font-size (px 24))
 (.up :font-size (px 24))
-("#table-of-contents"
- :cursor pointer
- :z-index 11)
-(header :margin 0 :padding 0)
+("#table-of-contents" :cursor pointer)
 ((header h1) :margin 0 :padding 0)
 (("#table-of-contents" h2) :color palevioletred :padding 0 :margin 0 :text-align right)
 (("#table-of-contents" li) :list-style none)
@@ -63,7 +58,7 @@
  :position sticky
  :overflow-y overlay
  :height 100vh)
-(.subtitle :text-align center :color red :font-weight bold :font-size (em 1.1))
+(.subtitle :text-align center :font-weight bold :font-size (em 1.1))
 (.tag :float right :color (rgb 46/85 112/255 48/85))
 ((h3 .tag) :right (px 0) :position absolute :color lightpink)
 (.org-center :text-align center)
