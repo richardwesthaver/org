@@ -20,25 +20,21 @@
  (submods (list "graph" "meta" "plan" "docs" "notes" "archive")))
 :rules
 ((default (build publish deploy dist-html dist-source dist-repos))
- (build (build-css update-docs)
+ (build (build-css update-docs build-graph build-docs build-agenda)
   (init :xdg)
-  (with-emacs (e)
-   (org-babel-lob-ingest company-babel-file)
-   (org-graph-init)
-   (org-graph-save)
-   (mapc 
-    (lambda (f)
-     (message "updating org file: %s" f)
-     (org-with-file-buffer f
-      (org-babel-execute-buffer)
-      (save-buffer)))
-    (flatten
-     (mapcar (lambda (x) (directory-files-recursively x "\\(readme\\|index\\)[.]org$"))
-      (remove "archive" submods :test 'string=)))))
   (init :org-graph)
   (organ/graph:org-graph-json :path ".stash/org-graph.json")
   (organ/graph:org-graph-minisearch-json :path ".stash/org-graph-index.json")
   (organ/graph:org-graph-tinysearch-json :path ".stash/org-graph-search.json"))
+ (graph ()
+  (:build ()
+   (with-emacs (e)
+    (org-babel-lob-ingest company-babel-file)
+    (org-graph-init)
+    (org-graph-save))))
+ (agenda ()
+  (:build ()
+   (with-emacs (e) (org-agenda-store-agenda-views))))
  (docs ()
   (:update ()
    (with-emacs (e)
@@ -58,7 +54,20 @@
              (save-buffer)))
       (flatten
        (mapcar (lambda (x) (directory-files-recursively x "[.]org$"))
-        (list "docs"))))))))
+        (list "docs")))))))
+  (:build ()
+   (with-emacs (e)
+     (mapc 
+      (lambda (f)
+        (message "updating org file: %s" f)
+        (org-with-file-buffer 
+         f
+         (org-babel-execute-buffer)
+         (save-buffer)))
+      (flatten
+       (mapcar 
+        (lambda (x) (directory-files-recursively x "\\(readme\\|index\\)[.]org$"))
+        (list "graph" "meta" "plan" "docs" "notes")))))))
  (clean ()
   (probe-delete-directory ".stash" :recursive t)
   (mapc 'delete-file (directory "**/*.html")))

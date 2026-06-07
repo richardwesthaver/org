@@ -38,11 +38,7 @@
  :display none
  :text-align left
  :backdrop-filter (blur 6))
-("#org-div-home-and-up"
- :display inline-flex
- :position sticky
- :top 0
- :overflow hidden)
+("#org-div-home-and-up" :position fixed)
 (button 
  :border none 
  :background-color black
@@ -50,16 +46,13 @@
  :font-size (px 16)
  :cursor pointer)
 ("button:hover" :background (rgb 21/85 21/85 11/51) :color (rgb 79/85 16/17 32/85))
-(.show :float right)
-(.hide :float right)
-(.home :float left :font-size (px 24))
-(.up :float left :font-size (px 24))
+;; (.show :float right)
+;; (.hide :float right)
+(.home :font-size (px 24))
+(.up :font-size (px 24))
 ("#table-of-contents"
  :cursor pointer
- :z-index 11
- :position fixed
- :top 0
- :right 0)
+ :z-index 11)
 (header :margin 0 :padding 0)
 ((header h1) :margin 0 :padding 0)
 (("#table-of-contents" h2) :color palevioletred :padding 0 :margin 0 :text-align right)
