@@ -4,11 +4,8 @@
 
 ;;; Code:
 (body :font-family "CommitMono" :color (rgb 239/255 50/51 83/85))
-;; (.content :text-wrap-style pretty)
-;; (.status :display flex :flex-flow row-reverse)
 (#(h1 h2 h3 h4 h5 h6) :color cornsilk)
 ("b, strong" :color (rgb 79/85 16/17 32/85))
-((details p) :margin 0)
 (input :max-width fit-content)
 (code :color (rgb 79/85 16/17 32/85))
 (pre 
@@ -36,7 +33,7 @@
  :display none
  :text-align left
  :backdrop-filter (blur 6))
-("#org-div-home-and-up" :position fixed)
+("#org-div-home-and-up" :position sticky)
 (button 
  :border none 
  :background-color black
@@ -44,22 +41,14 @@
  :font-size (px 16)
  :cursor pointer)
 ("button:hover" :background (rgb 21/85 21/85 11/51) :color (rgb 79/85 16/17 32/85))
-;; (.show :float right)
-;; (.hide :float right)
 (.home :font-size (px 24))
 (.up :font-size (px 24))
 ("#table-of-contents" :cursor pointer)
-((header h1) :margin 0 :padding 0)
-(("#table-of-contents" h2) :color palevioletred :padding 0 :margin 0 :text-align right)
+(("#table-of-contents" h2) :color palevioletred)
 (("#table-of-contents" li) :list-style none)
-("#table-of-contents #text-table-of-contents"
- :backdrop-filter (blur 6)
- :display none
- :position sticky
- :overflow-y overlay
- :height 100vh)
+("#table-of-contents #text-table-of-contents" :display none)
 (.subtitle :text-align center :font-weight bold :font-size (em 1.1))
-(.tag :float right :color (rgb 46/85 112/255 48/85))
+(.tag :color (rgb 46/85 112/255 48/85))
 ((h3 .tag) :right (px 0) :position absolute :color lightpink)
 (.org-center :text-align center)
 ((.org-dl dt) :font-weight bold)
