@@ -1,6 +1,6 @@
 #+title: The Compiler Company
 #+author: Richard Westhaver
-#+email: richard.westhaver@gmail.com
+#+email: ellis@compiler.company
 #+setupfile: clean.theme
 #+export_file_name: index
 #+OPTIONS: ^:nil toc:nil num:nil html-postamble:nil html-preamble:nil

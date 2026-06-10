@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2025  The Compiler Company
 
-;; Author: Richard Westhaver <richard.westhaver@gmail.com>
+;; Author: Richard Westhaver <ellis@compiler.company>
 ;; Keywords: internal
 
 ;; This program is free software; you can redistribute it and/or modify
