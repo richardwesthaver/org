@@ -67,7 +67,7 @@
          (save-buffer)))
       (flatten
        (mapcar 
-        (lambda (x) (directory-files-recursively x "\\(readme\\|index\\)[.]org$"))
+        (lambda (x) (directory-files-recursively x "\\(readme\\|index\\|info\\)[.]org$"))
         (list "graph" "meta" "plan" "docs" "notes")))))))
  (clean ()
   (probe-delete-directory ".stash" :recursive t)
@@ -105,7 +105,7 @@
             (dolist (s subrepos)
              (bump s))))
    (bump* "graph" "meta" "plan" "docs" "notes")
-   (vc-export (vc *skel-project*) :upstream nil)
+   (vc-export (vc *project*) :upstream nil)
    (with-repo (r :path "/tmp/org" :type :git :delete t)
     (setf (vc-remotes r) (remotes "org"))
     (loop for remote across (setf (vc-remotes r) (remotes "org"))
@@ -121,7 +121,7 @@
     (vc-push r :set-upstream t :remote "gh" :branch "default" :force t)
     (vc-push r :remote "cb" :branch "default" :force t))))
  (dist-repos ()
-  (vc-bundle (vc *skel-project*) "/opt/store/packy/vc/org.hg")
+  (vc-bundle (vc *project*) "/opt/store/packy/vc/org.hg")
   (mapc
    (lambda (x)
     (vc-bundle

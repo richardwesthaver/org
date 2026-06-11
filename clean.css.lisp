@@ -49,7 +49,7 @@
 ("#table-of-contents #text-table-of-contents" :display none)
 (.subtitle :text-align center :font-weight bold :font-size (em 1.1))
 (.tag :color (rgb 46/85 112/255 48/85))
-((h3 .tag) :right (px 0) :position absolute :color lightpink)
+((h3 .tag) :color lightpink)
 (.org-center :text-align center)
 ((.org-dl dt) :font-weight bold)
 (.title :text-align center)
