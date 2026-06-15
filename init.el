@@ -29,3 +29,11 @@
 (load "autoloads")
 (ulang-init)
 (org-id-export-mode)
+
+(defun cc-org--slime-setup ()
+  (when (slime-connected-p) (slime-quit-lisp t))
+  (sleep-for 1)
+  (slime)
+  (sleep-for 2)
+  (slime-eval-save "(ignore-errors (std/defsys:load-system '(:alien :core)))")
+  (slime-eval-save "(ignore-errors (std/defsys:load-modules '(:alien :tests) '(:core :tests)))"))
