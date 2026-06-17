@@ -24,13 +24,14 @@
 
 ;;; Code:
 (package-initialize)
-(use-package htmlize :ensure t)
+(use-package htmlize :ensure t :defer nil)
 (require 'ox-publish)
 (require 'org-id)
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/")
 (load "autoloads")
 (ulang-init)
-(org-id-export-mode)
+(require 'organ)
+;; (org-id-export-mode)
 
 (defun cc-org--slime-setup ()
   (when (slime-connected-p) (slime-quit-lisp t))
@@ -48,37 +49,37 @@
 (defvar html-foot "<footer><p>updated %C</p></footer>")
 (defvar default-org-export-setupfile (join-paths company-org-directory "clean.theme"))
 
-(setq org-html-style-default ""
-      org-html-scripts nil
-      org-html-htmlize-output-type 'css
-      org-export-htmlize-output-type 'css
-      org-export-allow-bind-keywords t
-      org-export-async-init-file (join-paths company-org-directory "init.el")
-      org-export-with-clocks t
-      org-export-with-date t
-      org-export-with-drawers t
-      org-export-async-debug t
-      org-html--id-attr-prefix ""
-      ;; org-export-in-background t
-      org-html-divs '((preamble "section" "preamble") (content "main" "content") (postamble "section" "postamble"))
-      org-html-container-element "div"
-      org-html-viewport '((width "device-width") (initial-scale 1))
-      org-html-doctype "html5"
-      org-html-html5-fancy t
-      org-src-fontify-natively t
-      org-export-with-broken-links 'mark
-      org-html-checkbox-type 'unicode
-      org-html-mathjax-options
-      '((path "https://cdn.compiler.company/js/tex-mml-chtml.js")
-        (scale 1.0) (align "center") (font "mathjax-modern")
-        (overflow "overflow") (tags "ams") (indent "0em")
-        (multlinewidth "85%") (tagindent ".8em") (tagside "right"))
-      ;; org-html-creator-string
-      make-backup-files nil
-      debug-on-error t
-      org-id-link-to-org-use-id t
-      ;; org-html-self-link-headlines t
-      org-html-format-drawer-function 'org-html-format-drawer)
+(setopt org-html-style-default ""
+        ;; org-html-scripts nil
+        org-html-htmlize-output-type 'css
+        org-export-htmlize-output-type 'css
+        org-export-allow-bind-keywords t
+        org-export-async-init-file (join-paths company-org-directory "init.el")
+        org-export-with-clocks t
+        org-export-with-date t
+        org-export-with-drawers t
+        org-export-async-debug t
+        org-html--id-attr-prefix ""
+        ;; org-export-in-background t
+        org-html-divs '((preamble "section" "preamble") (content "main" "content") (postamble "section" "postamble"))
+        org-html-container-element "div"
+        ;; org-html-viewport '((width "device-width") (initial-scale 1))
+        org-html-doctype "html5"
+        org-html-html5-fancy t
+        org-src-fontify-natively t
+        org-export-with-broken-links 'mark
+        org-html-checkbox-type 'unicode
+        org-html-mathjax-options
+        '((path "https://cdn.compiler.company/js/tex-mml-chtml.js")
+          (scale 1.0) (align "center") (font "mathjax-modern")
+          (overflow "overflow") (tags "ams") (indent "0em")
+          (multlinewidth "85%") (tagindent ".8em") (tagside "right"))
+        ;; org-html-creator-string
+        make-backup-files nil
+        debug-on-error t
+        org-id-link-to-org-use-id t
+        org-html-self-link-headlines t
+        org-html-format-drawer-function 'org-html-format-drawer)
 
 (defmacro with-org-publish (&rest body)
   `(let (
@@ -268,3 +269,6 @@ If given a prefix (C-u), set all args to t"
   (funcall (plist-get info :html-format-drawer-function)
            (org-element-property :drawer-name drawer)
            contents))
+
+(setq org-publish-timestamp-directory (join-paths company-org-directory ".stash/cache/org-timestamps/")
+      publish-dir (join-paths company-org-directory ".stash/www/"))
