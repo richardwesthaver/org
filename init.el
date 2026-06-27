@@ -176,9 +176,12 @@
          :base-extension "org"
          :recursive t
          :footnote-section-p t
+         :with-properties t
          :html-doctype "<!doctype html>"
          :publishing-directory ,(expand-file-name "docs" publish-dir)
          :publishing-function org-html-publish-to-html
+         :section-numbers nil
+         :headline-levels 8
          :htmlized-source t
          :html-postamble ,html-foot)))
 
