@@ -59,6 +59,7 @@
         org-export-with-date t
         org-export-with-drawers t
         org-export-async-debug t
+        org-export-with-sub-superscripts nil
         org-html--id-attr-prefix ""
         ;; org-export-in-background t
         org-html-divs '((preamble "section" "preamble") (content "main" "content") (postamble "section" "postamble"))
@@ -67,7 +68,8 @@
         org-html-doctype "html5"
         org-html-html5-fancy t
         org-src-fontify-natively t
-        org-export-with-broken-links 'mark
+        ;; TODO 2026-07-02: 
+        org-export-with-broken-links t
         org-html-checkbox-type 'unicode
         org-html-mathjax-options
         '((path "https://cdn.compiler.company/js/tex-mml-chtml.js")

@@ -12,7 +12,6 @@
 #+LATEX_HEADER: \PassOptionsToPackage{hyperref,x11names}{xcolor}
 #+LATEX_HEADER: \usepackage{tocloft}
 #+LATEX_HEADER: \usepackage[margin=2cm]{geometry}
-#+COMMENT: #+ODT_STYLES_FILE: ~/org/ox/odt-theme.xml
 #+LATEX_HEADER: \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 #+LATEX_HEADER: \hypersetup{colorlinks, citecolor=red,filecolor=magenta,linkcolor=magenta,urlcolor=magenta}
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.compiler.company/font/bqn.css" />

@@ -4,7 +4,7 @@
 
 ;;; Code:
 (body :font-family "CommitMono" :color (rgb 239/255 50/51 83/85))
-(#(h1 h2 h3 h4 h5 h6) :color cornsilk)
+(#(h1 h2 h3 h4 h5 h6) :color cornsilk :padding-top 2em)
 ("b, strong" :color (rgb 79/85 16/17 32/85))
 (input :max-width fit-content)
 (code :color (rgb 79/85 16/17 32/85))
@@ -33,7 +33,12 @@
  :display none
  :text-align left
  :backdrop-filter (blur 6))
-("#org-div-home-and-up" :position sticky)
+("#org-div-home-and-up" :position sticky :top 0 :overflow hidden)
+("#scroll-to-top"
+ :display none ; /* Hidden by default */
+ :position fixed ; /* Fixed/sticky position */
+ :bottom (px 20) ; /* Place the button at the bottom of the page */
+ :right (px 30)) ; /* Place the button 30px from the right */)
 (button 
  :border none 
  :background-color black
@@ -84,5 +89,5 @@
 (.org-org-upcoming-deadline :color (rgb 178/255 2/15 2/15))
 (.org-org-upcoming-distant-deadline :color (rgb 0 0 0) :background-color (rgb 1 1 1))
 (.org-org-warning :color (rgb 1 0 0) :font-weight bold)
-((div "#footnotes") :padding-bottom (em 1))
+;; ((div "#footnotes") :padding-bottom (em 1))
 (":target" :color (rgb 16/17 39/85 4/17))
