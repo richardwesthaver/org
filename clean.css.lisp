@@ -4,7 +4,7 @@
 
 ;;; Code:
 (body :font-family "CommitMono" :color (rgb 239/255 50/51 83/85))
-(#(h1 h2 h3 h4 h5 h6) :color cornsilk :padding-top 2em)
+(#(h1 h2 h3 h4 h5 h6) :color cornsilk :padding-top 2rem)
 ("b, strong" :color (rgb 79/85 16/17 32/85))
 (input :max-width fit-content)
 (code :color (rgb 79/85 16/17 32/85))
