@@ -42,7 +42,7 @@
   (slime-eval-save "(ignore-errors (std/defsys:load-modules '(:alien :tests) '(:core :tests)))"))
 
 (defvar project-dir company-org-directory)
-(defvar publish-dir "/tmp/www")
+(defvar publish-dir (join-paths company-org-directory ".stash/www"))
 (defvar url "https://compiler.company")
 (defvar vc-url company-vc-url)
 (defvar packy-url company-packy-url)
