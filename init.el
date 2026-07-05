@@ -31,7 +31,7 @@
 (load "autoloads")
 (ulang-init)
 (require 'organ)
-;; (org-id-export-mode)
+(org-id-export-mode)
 
 (defun cc-org--slime-setup ()
   (when (slime-connected-p) (slime-quit-lisp t))
