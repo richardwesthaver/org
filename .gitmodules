@@ -1,0 +1,15 @@
+[submodule "graph"]
+	path = graph
+	url = https://github.com/richardwesthaver/graph
+[submodule "notes"]
+	path = notes
+	url = https://github.com/richardwesthaver/notes
+[submodule "meta"]
+	path = meta
+	url = https://github.com/richardwesthaver/meta
+[submodule "plan"]
+	path = plan
+	url = https://github.com/richardwesthaver/plan
+[submodule "docs"]
+	path = docs
+	url = https://github.com/richardwesthaver/docs
